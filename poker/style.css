@@ -5,13 +5,13 @@
   body {
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(2, 4rem);
-    grid-template-rows: 7rem 2rem 7rem;
+    grid-template-columns: repeat(12, 4rem);
+    grid-template-rows: 6rem 2rem 6rem;
     gap: .5rem;
     cursor: pointer;
     justify-content: center;
     padding-top: 1rem;
-    background-image: url("https://i.ebayimg.com/images/g/VAEAAOSwLJ9Z5psJ/s-l400.jpg");
+    background-color: white;
   }
   
   .deck {
@@ -27,12 +27,20 @@
     user-select: none;
   }
   
+ /* .dealer-deck {
+    background-color: blue;
+  } */
+
+  .poker-deck {
+    background-color: blue;
+  }
+
   .computer-deck {
     background-color: red;
   }
   
   .player-deck {
-    background-color: blue;
+    background-color: red;
   }
   
   .text {
@@ -43,7 +51,7 @@
   }
   
   .card {
-    position: relative;
+    position:relative;
     height: 100%;
     width: 100%;
     border: 1px solid black;
@@ -79,8 +87,4 @@
     bottom: .5rem;
     right: .5rem;
     transform: rotate(180deg);
-  }
-
-  body {
-    background-color: lightblue;
   }
