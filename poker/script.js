@@ -50,7 +50,7 @@ function startGame() {
   //const deckMidpoint = Math.ceil(deck.numberOfCards / 2)
   // playerDeck = new Deck(deck.cards.slice(0, deckMidpoint))
   // computerDeck = new Deck(deck.cards.slice(deckMidpoint, deck.numberOfCards))
-  pokerDeck = new Deck(52)
+  pokerDeck = new Deck(numberOfCards)
   inRound = false
   stop = false
 
