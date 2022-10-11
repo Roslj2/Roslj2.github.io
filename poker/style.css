@@ -35,6 +35,19 @@
     background-color: blue;
   }
 
+  .card-slot {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    border-radius: .5rem;
+    background-color: white;
+    user-select: none;
+  }
+
   .poker-card-slot {
     height: 100%;
     width: 100%;
