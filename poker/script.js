@@ -40,6 +40,8 @@ document.addEventListener("click", () => {
   }
 })
 
+numberOfCards === 52
+
 startGame()
 function startGame() {
   const deck = new Deck()
