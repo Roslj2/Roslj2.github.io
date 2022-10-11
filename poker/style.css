@@ -11,7 +11,7 @@
     cursor: pointer;
     justify-content: center;
     padding-top: 1rem;
-    background-color: white;
+    background-color: lightblue;
   }
   
   .deck {
@@ -60,7 +60,6 @@
     border-radius: .5rem;
     background-color: blue;
     user-select: none;
-
   }
 
   .computer-deck {
