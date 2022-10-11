@@ -80,27 +80,27 @@ function flipCards() {
 
   updateDeckCount()
 
-  //if (isRoundWinner(playerCard, computerCard)) {
-    //text.innerText = "Win"
-    //playerDeck.push(playerCard)
-    //playerDeck.push(computerCard)
-  //} else if (isRoundWinner(computerCard, playerCard)) {
-    //text.innerText = "Lose"
-    //computerDeck.push(playerCard)
-    //computerDeck.push(computerCard)
-  //} else {
-    //text.innerText = "Draw"
-    //playerDeck.push(playerCard)
-    //computerDeck.push(computerCard)
-  //}
+  if (isRoundWinner(playerCard, computerCard)) {
+    text.innerText = "Win"
+    playerDeck.push(playerCard)
+    playerDeck.push(computerCard)
+  } else if (isRoundWinner(computerCard, playerCard)) {
+    text.innerText = "Lose"
+    computerDeck.push(playerCard)
+    computerDeck.push(computerCard)
+  } else {
+    text.innerText = "Draw"
+    playerDeck.push(playerCard)
+    computerDeck.push(computerCard)
+  }
 
-  //if (isGameOver(playerDeck)) {
-    //text.innerText = "You Lose!!"
-    //stop = true
-  //} else if (isGameOver(computerDeck)) {
-    //text.innerText = "You Win!!"
-    //stop = true
-  //}
+  if (isGameOver(playerDeck)) {
+    text.innerText = "You Lose!!"
+    stop = true
+  } else if (isGameOver(computerDeck)) {
+    text.innerText = "You Win!!"
+    stop = true
+  }
 }
 
 function updateDeckCount() {
