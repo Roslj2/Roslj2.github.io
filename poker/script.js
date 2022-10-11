@@ -20,8 +20,10 @@ const CARD_VALUE_MAP = {
 //const playerCardSlot = document.querySelector(".player-card-slot")
 //const computerDeckElement = document.querySelector(".computer-deck")
 //const playerDeckElement = document.querySelector(".player-deck")
-const pokerCardSlot = document.querySelector("poker-card")
+const pokerCardSlot = document.querySelector("poker-card-slot")
 const pokerDeckElement = docmument.querySelector("poker-deck")
+const playerCardSlot = document.querySelector(".player-card-slot")
+const computerDeckElement = document.querySelector(".player-deck")
 const text = document.querySelector(".text")
 
 //let playerDeck, computerDeck, inRound, stop
