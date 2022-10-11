@@ -80,24 +80,24 @@ function flipCards() {
 
   updateDeckCount()
 
-  if (isRoundWinner(playerCard, computerCard)) {
+  if (isRoundWinner(playerCard, pokerCard)) {
     text.innerText = "Win"
     playerDeck.push(playerCard)
-    playerDeck.push(computerCard)
-  } else if (isRoundWinner(computerCard, playerCard)) {
+    playerDeck.push(pokerCard)
+  } else if (isRoundWinner(pokerCard, playerCard)) {
     text.innerText = "Lose"
-    computerDeck.push(playerCard)
-    computerDeck.push(computerCard)
+    pokerDeck.push(playerCard)
+    pokerDeck.push(pokerCard)
   } else {
     text.innerText = "Draw"
     playerDeck.push(playerCard)
-    computerDeck.push(computerCard)
+    pokerDeck.push(pokerCard)
   }
 
   if (isGameOver(playerDeck)) {
     text.innerText = "You Lose!!"
     stop = true
-  } else if (isGameOver(computerDeck)) {
+  } else if (isGameOver(pokerDeck)) {
     text.innerText = "You Win!!"
     stop = true
   }
