@@ -14,7 +14,7 @@
     background-color: lightblue;
   }
   
-  .deck {
+/*  .deck {
     height: 100%;
     width: 100%;
     border: 1px solid black;
@@ -25,7 +25,7 @@
     border-radius: .5rem;
     background-color: white;
     user-select: none;
-  }
+  } */
   
  /* .dealer-deck {
     background-color: blue;
