@@ -77,7 +77,6 @@
     content: attr(data-value);
     font-size: 1rem;
   }
-  
   .card::before {
     top: .5rem;
     left: .5rem
