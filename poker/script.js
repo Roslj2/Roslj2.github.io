@@ -53,6 +53,7 @@ function startGame() {
   // playerDeck = new Deck(deck.cards.slice(0, deckMidpoint))
   // computerDeck = new Deck(deck.cards.slice(deckMidpoint, deck.numberOfCards))
   pokerDeck = new Deck()
+  playerDeck = new Deck()
   inRound = false
   stop = false
 
