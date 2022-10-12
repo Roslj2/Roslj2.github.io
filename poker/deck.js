@@ -68,3 +68,11 @@ function freshDeck() {
     })
   })
 }
+
+pokerdeck() {
+  const cardDiv = document.createElement("div")
+  cardDiv.innerText = this.suit
+  cardDiv.classList.add("card", this.color)
+  cardDiv.dataset.value = `${this.value} ${this.suit}`
+  return cardDiv
+}
