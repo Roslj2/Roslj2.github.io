@@ -27,7 +27,7 @@ const computerDeckElement = document.querySelector(".player-deck")
 const text = document.querySelector(".text")
 
 //let playerDeck, computerDeck, inRound, stop
-let pokerDeck, inRound, stop
+let pokerDeck, playerDeck, inRound, stop
 
 document.addEventListener("click", () => {
   if (stop) {
