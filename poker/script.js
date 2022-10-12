@@ -42,7 +42,7 @@ document.addEventListener("click", () => {
   }
 })
 
-numberOfCards === 52
+const numberOfCards = 52
 
 startGame()
 function startGame() {
