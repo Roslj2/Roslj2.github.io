@@ -143,20 +143,25 @@ function isWinningHand(card1, card2, card3, card4, card5) {
 
   // Load current hand into an array
   var currentHand = [CARD_VALUE_MAP[card1.value], CARD_VALUE_MAP[card2.value], CARD_VALUE_MAP[card3.value], CARD_VALUE_MAP[card4.value], CARD_VALUE_MAP[card5.value]]
-/*
+
   // Check for 1 pair
-  for (var firstIndex=0, firstIndex < currentHand.length, firstIndex++)
+  for (let firstIndex=0; firstIndex < currentHand.length; firstIndex++)
   {
-    for (var secondIndex=1, secondIndex
-    if currentHand[i] == currentHand[i]
+    for (let secondIndex=firstIndex+1; secondIndex < currentHand.length; secondIndex++){
+      if (currentHand[firstIndex] == currentHand[secondIndex]){
+        text.innerText = "You have a pair!!"
+      }
+    }
   }
 
+
+/*
   if (curentHand[0] == currentHand[1] ||
     curentHand[0] == currentHand[2] ||
     curentHand[0] == currentHand[3] ||
     curentHand[0] == currentHand[4] ||
     curentHand[0] == currentHand[1])
-*/
+
   // Check for 1 pair
   if ((CARD_VALUE_MAP[card1.value] == CARD_VALUE_MAP[card2.value])
     || (CARD_VALUE_MAP[card1.value] == CARD_VALUE_MAP[card3.value])
@@ -173,6 +178,8 @@ function isWinningHand(card1, card2, card3, card4, card5) {
  {
     text.innerText = "You have a pair!"
   }
+
+*/
 
   if (dealerDeck.numberOfCards < 5) {
     stop = true
