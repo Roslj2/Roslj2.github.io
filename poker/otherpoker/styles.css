@@ -4,7 +4,6 @@
 
 body {
   background-color: white;
-  width: 100%;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(6, 4rem);
