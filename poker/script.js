@@ -70,12 +70,16 @@ dealerCardSlot.addEventListener("click", () => {
     })
 
 // Set event listener for card #1
+let cardsPicked = 0;
 let counter = 0;
 cardSlot1.addEventListener("click", () => {
   counter++;
   text.innerText = "You chose Card 1"
-    storeGuess(captureInput.value);
-})
+  storeGuess(captureInput.value);
+
+  if (counter = 5) {
+    cardsPicked++; 
+  }
 
 
 cardSlot2.addEventListener("click", () => {
