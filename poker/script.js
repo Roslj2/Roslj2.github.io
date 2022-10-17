@@ -56,6 +56,22 @@ cardSlot1.addEventListener("click", () => {
   text.innerText = "You clicked Card 1"
 })
 
+cardSlot2.addEventListener("click", () => {
+  text.innerText = "You clicked Card 2"
+})
+
+cardSlot3.addEventListener("click", () => {
+  text.innerText = "You clicked Card 3"
+})
+
+cardSlot4.addEventListener("click", () => {
+  text.innerText = "You clicked Card 4"
+})
+
+cardSlot5.addEventListener("click", () => {
+  text.innerText = "You clicked Card 5"
+})
+
 
 startGame()
 
