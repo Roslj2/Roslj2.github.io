@@ -130,7 +130,7 @@ function flipCards() {
   cardSlot2.appendChild(card2.getHTML())
   cardSlot3.appendChild(card3.getHTML())
   cardSlot4.appendChild(card4.getHTML())
-  cardSlot1.appendChild(card5.getHTML())
+  cardSlot5.appendChild(card5.getHTML())
 
   updateDeckCount()
 
