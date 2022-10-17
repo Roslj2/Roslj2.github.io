@@ -35,7 +35,8 @@ const text = document.querySelector(".text")
 //let playerDeck, computerDeck, inRound, stop
 let dealerDeck, inRound, stop
 
-document.addEventListener("click", () => {
+//document.addEventListener("click", () => {
+dealerCardSlot.addEventListener("click", () => {
   //text.innerText = "You clicked"
 
   if (stop) {
@@ -49,6 +50,12 @@ document.addEventListener("click", () => {
     flipCards()
   }
 })
+
+// Set event listener for card #1
+cardSlot1.addEventListener("click", () => {
+  text.innerText = "You clicked cardSlot1"
+})
+
 
 startGame()
 
@@ -113,6 +120,11 @@ function flipCards() {
 
   isWinningHand(card1, card2, card3, card4, card5)
 
+  if (dealerDeck.numberOfCards < 5) {
+    stop = true
+    text.innerText = "Game over!"
+  }
+
 /*
   if (isRoundWinner(playerCard, computerCard)) {
     text.innerText = "Win"
@@ -144,50 +156,22 @@ function isWinningHand(card1, card2, card3, card4, card5) {
   // Load current hand into an array
   var currentHand = [CARD_VALUE_MAP[card1.value], CARD_VALUE_MAP[card2.value], CARD_VALUE_MAP[card3.value], CARD_VALUE_MAP[card4.value], CARD_VALUE_MAP[card5.value]]
 
-  // Check for 1 pair
+  // Sort the array numerically
+  currentHand.sort((a,b)=>a-b)
+
+  let pairValue
+
+  // Check for 1 pair. If found, record the pair value.
   for (let firstIndex=0; firstIndex < currentHand.length; firstIndex++)
   {
-    for (let secondIndex=firstIndex+1; secondIndex < currentHand.length; secondIndex++){
-      if (currentHand[firstIndex] == currentHand[secondIndex]){
+    for (let secondIndex=firstIndex+1; secondIndex < currentHand.length; secondIndex++) {
+      if (currentHand[firstIndex] == currentHand[secondIndex]) {
+        pairValue = currentHand[firstIndex]
         text.innerText = "You have a pair!!"
       }
     }
   }
 
-
-/*
-  if (curentHand[0] == currentHand[1] ||
-    curentHand[0] == currentHand[2] ||
-    curentHand[0] == currentHand[3] ||
-    curentHand[0] == currentHand[4] ||
-    curentHand[0] == currentHand[1])
-
-  // Check for 1 pair
-  if ((CARD_VALUE_MAP[card1.value] == CARD_VALUE_MAP[card2.value])
-    || (CARD_VALUE_MAP[card1.value] == CARD_VALUE_MAP[card3.value])
-    || (CARD_VALUE_MAP[card1.value] == CARD_VALUE_MAP[card3.value])
-    || (CARD_VALUE_MAP[card1.value] == CARD_VALUE_MAP[card4.value])
-    || (CARD_VALUE_MAP[card1.value] == CARD_VALUE_MAP[card5.value])
-    || (CARD_VALUE_MAP[card2.value] == CARD_VALUE_MAP[card3.value])
-    || (CARD_VALUE_MAP[card2.value] == CARD_VALUE_MAP[card4.value])
-    || (CARD_VALUE_MAP[card2.value] == CARD_VALUE_MAP[card5.value])
-    || (CARD_VALUE_MAP[card3.value] == CARD_VALUE_MAP[card4.value])
-    || (CARD_VALUE_MAP[card3.value] == CARD_VALUE_MAP[card5.value])
-    || (CARD_VALUE_MAP[card4.value] == CARD_VALUE_MAP[card5.value]))
-
- {
-    text.innerText = "You have a pair!"
-  }
-
-*/
-
-  if (dealerDeck.numberOfCards < 5) {
-    stop = true
-    text.innerText = "Game over!"
-  }
-
-
-  // text.innerText = CARD_VALUE_MAP[card1.value]
 
 }
 
