@@ -60,7 +60,7 @@ cardSlot1.addEventListener("click", () => {
   storeGuess(captureInput.value);
 
 
-  if (counter = 5) {
+  if (counter1 = 5) {
     cardsPicked++; 
   }
 
