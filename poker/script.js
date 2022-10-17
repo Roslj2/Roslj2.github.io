@@ -37,7 +37,7 @@ let dealerDeck, inRound, stop
 
 //document.addEventListener("click", () => {
 dealerCardSlot.addEventListener("click", () => {
-  text.innerText = "You clicked"
+  //text.innerText = "You clicked"
 
   if (stop) {
     startGame()
