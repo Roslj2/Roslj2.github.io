@@ -53,7 +53,7 @@ dealerCardSlot.addEventListener("click", () => {
 
 // Set event listener for card #1
 cardSlot1.addEventListener("click", () => {
-  text.innerText = "You clicked cardSlot1"
+  text.innerText = "You clicked Card 1"
 })
 
 cardSlot2.addEventListener("click", () => {
