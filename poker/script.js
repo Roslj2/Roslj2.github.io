@@ -59,6 +59,7 @@ cardSlot1.addEventListener("click", () => {
   text.innerText = "You chose Card 1"
   storeGuess(captureInput.value);
 
+
   if (counter = 5) {
     cardsPicked++; 
   }
@@ -80,6 +81,7 @@ cardSlot5.addEventListener("click", () => {
   text.innerText = "You chose Card 5"
 })
 
+})
 
 startGame()
 
@@ -208,4 +210,3 @@ function updateDeckCount() {
 function isRoundWinner(cardOne, cardTwo) {
   return CARD_VALUE_MAP[cardOne.value] > CARD_VALUE_MAP[cardTwo.value]
 }
-
