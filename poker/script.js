@@ -92,6 +92,7 @@ cardSlot1.addEventListener("click", () => {
   //text.innerText = "You chose Card 1"
 })
 
+
 cardSlot2.addEventListener("click", () => {
   text.innerText = "You chose Card 2"
 })
