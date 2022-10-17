@@ -51,9 +51,46 @@ dealerCardSlot.addEventListener("click", () => {
   }
 })
 
+    let captureInput = document.getElementById('primaryGuess');
+    storeGuess(captureInput.value);
+    const newLi = document.createElement("LI");
+    const LiContent = document.createTextNode(captureInput.value);
+    newLi.appendChild(LiContent);
+    listOfPriorGuesses.appendChild(newLi);
+    arrayOfGuesses.forEach((currNum) => {
+        if (parseInt(currNum) === randomNumber) {
+            gameTitle.innerText = "YOU WIN!!!"
+            gameTitle.style.color = "green"
+            captureInput.value = "Click Play Again!"
+        } else if(parseInt(currNum) < randomNumber) {
+            captureInput.value = "Guess Higher!"
+        } else if(parseInt(currNum) > randomNumber) {
+            captureInput.value = "Guess Lower!"
+        }
+    })
+})
+
 // Set event listener for card #1
+let counter = 0;
 cardSlot1.addEventListener("click", () => {
-  text.innerText = "You chose Card 1"
+  counter++;
+  let captureInput = document.getElementById('primaryGuess');
+    storeGuess(captureInput.value);
+    const newLi = document.createElement("LI");
+    const LiContent = document.createTextNode(captureInput.value);
+    newLi.appendChild(LiContent);
+    listOfPriorGuesses.appendChild(newLi);
+    arrayOfGuesses.forEach((currNum) => {
+        if (parseInt(currNum) === randomNumber) {
+            gameTitle.innerText = "YOU WIN!!!"
+            gameTitle.style.color = "green"
+            captureInput.value = "Click Play Again!"
+        } else if(parseInt(currNum) < randomNumber) {
+            captureInput.value = "Guess Higher!"
+        } else if(parseInt(currNum) > randomNumber) {
+            captureInput.value = "Guess Lower!"
+        }
+  //text.innerText = "You chose Card 1"
 })
 
 cardSlot2.addEventListener("click", () => {
