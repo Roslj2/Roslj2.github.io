@@ -61,7 +61,7 @@ startGame()
 
 function startGame() {
 
-  text.innerText = "Inside strart game"
+  text.innerText = "Inside start game"
 
   const deck = new Deck()
   deck.shuffle()
