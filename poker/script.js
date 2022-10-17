@@ -74,11 +74,7 @@ let counter = 0;
 cardSlot1.addEventListener("click", () => {
   counter++;
   text.innerText = "You chose Card 1"
-  let captureInput = document.getElementById('primaryGuess');
     storeGuess(captureInput.value);
-    const newLi = document.createElement("LI");
-    const LiContent = document.createTextNode(captureInput.value);
-    newLi.appendChild(LiContent);
 })
 
 
