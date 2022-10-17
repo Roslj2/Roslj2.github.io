@@ -81,7 +81,7 @@ cardSlot5.addEventListener("click", () => {
   text.innerText = "You chose Card 5"
 })
 
-})
+  })
 
 startGame()
 
