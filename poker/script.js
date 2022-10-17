@@ -68,7 +68,6 @@ dealerCardSlot.addEventListener("click", () => {
             captureInput.value = "Guess Lower!"
         }
     })
-})
 
 // Set event listener for card #1
 let counter = 0;
