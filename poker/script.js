@@ -62,7 +62,7 @@ let counter5 = 0;
 cardSlot1.addEventListener("click", () => {
   counter1++;
   text.innerText = "You chose Card 1"
-  //make different counter for to unpick a card
+  //make different counter to unpick a card
   //storeGuess(captureInput.value);
 
   if (counter1 >= 1) {
