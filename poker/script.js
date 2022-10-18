@@ -58,7 +58,7 @@ let counter1 = 0;
 cardSlot1.addEventListener("click", () => {
   counter1++;
   console.log(counter1);
-  text.innerText = "You chose Card 3"
+  text.innerText = "You chose Card 1"
   storeGuess(captureInput.value);
 
   if (counter1 <= 5) {
