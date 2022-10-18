@@ -82,9 +82,9 @@ cardSlot2.addEventListener("click", () => {
     cardsPicked++; 
   }
 
-  else {
+  if (counter2 >= 2) {
     counter2 = 0
-  }
+  } 
 
 })
 
@@ -97,9 +97,9 @@ cardSlot3.addEventListener("click", () => {
     cardsPicked++; 
   }
 
-  else {
+  if (counter3 >= 2) {
     counter3 = 0
-  }
+  } 
 
 })
 
@@ -112,9 +112,9 @@ cardSlot4.addEventListener("click", () => {
     cardsPicked++; 
   }
 
-  else {
+  if (counter4 >= 2) {
     counter4 = 0
-  }
+  } 
 
 })
 
@@ -127,9 +127,9 @@ cardSlot5.addEventListener("click", () => {
     cardsPicked++; 
   }
 
-  else {
+  if (counter5 >= 2) {
     counter5 = 0
-  }
+  } 
 
 })
 
