@@ -25,6 +25,7 @@ body {
   font-size: 3rem;
   border-radius: .5rem;
   color: white;
+  background-color: white;
   user-select: none;
   border: 1px solid black;
 }
@@ -58,6 +59,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 4rem;
+  background-color: white;
 }
 
 .card.red {
