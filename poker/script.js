@@ -131,7 +131,7 @@ cardSlot5.addEventListener("click", () => {
   //storeGuess(captureInput.value);
 
   if (counter5 = 1) {
-    text.innerText = `You chose the ${value} of ${suit}`
+    text.innerText = `You chose the ${value, suit}`
     cardsKeep++; 
   }
 
