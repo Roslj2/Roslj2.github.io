@@ -90,6 +90,10 @@ cardSlot2.addEventListener("click", () => {
     cardsKeep--
   } 
 
+  if (cardsKeep = 1) {
+    text.innerText = "test"
+  }
+
 })
 
 cardSlot3.addEventListener("click", () => {
