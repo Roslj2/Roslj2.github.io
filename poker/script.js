@@ -51,7 +51,7 @@ dealerCardSlot.addEventListener("click", () => {
   }
 })
 
-// Set event listener for card #1
+// Set event listener for card 1, 2, 3, 4, 5
 let cardsPicked = 0;
 let counter1 = 0;
 let counter2 = 0;
