@@ -72,7 +72,8 @@ cardSlot1.addEventListener("click", () => {
 
   //if (counter1 = 2)
   if (counter1 >= 2) {
-    text.innerText = "You un-picked Card 1"
+    //text.innerText = "You un-picked Card 1"
+    console.log("You un-picked Card 1");
     //counter1 = 0
     //cardsKeep-- 
   } 
