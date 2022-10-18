@@ -147,10 +147,6 @@ cardSlot5.addEventListener("click", () => {
 
 })
 
-  if (counter1 = 1) {
-    text.innerText = "test"
-  }
-
   })
 
 startGame()
