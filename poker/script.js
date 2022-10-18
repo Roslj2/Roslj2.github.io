@@ -66,6 +66,7 @@ cardSlot1.addEventListener("click", () => {
 
   if (counter1 = 1) {
     text.innerText = `You chose ${value}`
+    //text.innerText = 'You chose ${cardSlot1.value}`
     cardsKeep++; 
   }
 
