@@ -117,7 +117,7 @@ cardSlot4.addEventListener("click", () => {
   //storeGuess(captureInput.value);
 
   if (counter4 = 1) {
-    text.innerText = `You chose Card 4`
+    text.innerText = "You chose Card 4"
     cardsKeep++;
   }
 
@@ -130,11 +130,12 @@ cardSlot4.addEventListener("click", () => {
 })
 
 cardSlot5.addEventListener("click", () => {
+  text.innerText = "You chose Card 5"
   counter5++;
   //storeGuess(captureInput.value);
 
   if (counter5 = 1) {
-    text.innerText = "You chose Card 5"
+    //text.innerText = "You chose Card 5"
     cardsKeep++; 
   }
 
