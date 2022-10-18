@@ -52,7 +52,7 @@ dealerCardSlot.addEventListener("click", () => {
 })
 
 // Set event listener for card 1, 2, 3, 4, 5
-let cardsPicked = 0;
+let cardsKeep = 0;
 let counter1 = 0;
 let counter2 = 0;
 let counter3 = 0;
@@ -66,26 +66,28 @@ cardSlot1.addEventListener("click", () => {
 
   if (counter1 = 1) {
     text.innerText = "You chose Card 1"
-    cardsPicked++; 
+    cardsKeep++; 
   }
 
   if (counter1 >= 2) {
     text.innerText = "You un-picked Card 1"
     counter1 = 0
+    cardsKeep-- 
   } 
 
 cardSlot2.addEventListener("click", () => {
   counter2++;
   //storeGuess(captureInput.value);
 
-  if (counter2 <= 1) {
+  if (counter2 = 1) {
     text.innerText = "You chose Card 2"
-    cardsPicked++; 
+    cardsKeep++; 
   }
 
   if (counter2 >= 2) {
     text.innerText = "You un-picked Card 2"
     counter2 = 0
+    cardsKeep--
   } 
 
 })
@@ -94,14 +96,15 @@ cardSlot3.addEventListener("click", () => {
   counter3++;
   //storeGuess(captureInput.value);
 
-  if (counter3 >= 1) {
+  if (counter3 = 1) {
     text.innerText = "You chose Card 3"
-    cardsPicked++; 
+    cardsKeep++; 
   }
 
   if (counter3 >= 2) {
     text.innerText = "You un-picked Card 3"
     counter3 = 0
+    cardsKeep--
   } 
 
 })
@@ -110,14 +113,15 @@ cardSlot4.addEventListener("click", () => {
   counter4++;
   //storeGuess(captureInput.value);
 
-  if (counter4 >= 1) {
+  if (counter4 = 1) {
     text.innerText = "You chose Card 4"
-    cardsPicked++; 
+    cardsKeep++;
   }
 
   if (counter4 >= 2) {
     text.innerText = "You un-picked Card 4"
     counter4 = 0
+    cardsKeep--
   } 
 
 })
@@ -126,14 +130,15 @@ cardSlot5.addEventListener("click", () => {
   counter5++;
   //storeGuess(captureInput.value);
 
-  if (counter5 >= 1) {
+  if (counter5 = 1) {
     text.innerText = "You chose Card 5"
-    cardsPicked++; 
+    cardsKeep++; 
   }
 
   if (counter5 >= 2) {
     text.innerText = "You un-picked Card 5"
     counter5 = 0
+    cardsKeep--
   } 
 
 })
