@@ -69,10 +69,6 @@ cardSlot1.addEventListener("click", () => {
     cardsPicked++; 
   }
 
-  else {
-    counter1 = 0
-  }
-
   if (counter1 >= 2) {
     counter1 = 0
   } 
