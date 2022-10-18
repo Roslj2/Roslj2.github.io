@@ -147,7 +147,7 @@ cardSlot5.addEventListener("click", () => {
 
 })
 
-  if (cardsKeep = 1) {
+  if (counter1 = 1) {
     text.innerText = "test"
   }
 
