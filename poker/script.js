@@ -60,8 +60,9 @@ let counter4 = 0;
 let counter5 = 0;
 
 cardSlot1.addEventListener("click", () => {
-  text.innerText = "You chose Card 1"
+  text.innerText = "You chose Card 1";
   counter1++;
+  cardsKeep++; 
   //make different counter to unpick a card
 
   //if (counter1 = 1) {
