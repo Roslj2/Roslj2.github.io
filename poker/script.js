@@ -147,6 +147,10 @@ cardSlot5.addEventListener("click", () => {
 
 })
 
+  if (cardsKeep = 1) {
+    text.innerText = "test"
+  }
+
   })
 
 startGame()
