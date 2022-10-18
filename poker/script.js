@@ -65,7 +65,7 @@ cardSlot1.addEventListener("click", () => {
   //storeGuess(captureInput.value);
 
   if (counter1 = 1) {
-    text.innerText = "You chose Card 1"
+    text.innerText = `You chose ${value}`
     cardsKeep++; 
   }
 
