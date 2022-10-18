@@ -65,13 +65,17 @@ cardSlot1.addEventListener("click", () => {
   //make different counter to unpick a card
   //storeGuess(captureInput.value);
 
-  if (counter1 >= 1) {
+  if (counter1 = 1) {
     cardsPicked++; 
   }
 
   else {
     counter1 = 0
   }
+
+  if (counter1 >= 2) {
+    counter1 = 0
+  } 
 
 cardSlot2.addEventListener("click", () => {
   counter2++;
