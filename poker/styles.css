@@ -60,6 +60,7 @@ body {
   align-items: center;
   font-size: 4rem;
   background-color: white;
+  user-select: none;
 }
 
 .card.red {
