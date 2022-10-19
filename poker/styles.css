@@ -6,7 +6,7 @@ body {
   background-color: lightblue;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(6, 4rem);
+  grid-template-columns: repeat(10, 4rem);
   grid-template-rows: 7rem 2rem 7rem;
   gap: .5rem;
   cursor: default;
