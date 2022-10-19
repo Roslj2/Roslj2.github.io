@@ -61,16 +61,16 @@ let counter5 = 0;
 
 cardSlot1.addEventListener("click", () => {
   counter1++;
+  text.innerText = "You chose Card 1";
 
   if (counter1 = 1) {
-    text.innerText = "You chose Card 1";
     cardsKeep++; 
   }
   
   if (counter1 = 2) {
   text.innerText = "You un-picked Card 1";
-  counter1 = 0;
-  cardsKeep--; 
+  //counter1 = 0;
+  //cardsKeep--; 
   
   } 
 
