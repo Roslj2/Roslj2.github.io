@@ -61,9 +61,9 @@ let counter5 = 0;
 
 cardSlot1.addEventListener("click", () => {
   counter1++;
-  text.innerText = "You chose Card 1";
 
   if (counter1 = 1) {
+    text.innerText = "You chose Card 1";
     cardsKeep++; 
   }
   
