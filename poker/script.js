@@ -77,65 +77,72 @@ cardSlot1.addEventListener("click", () => {
 
 cardSlot2.addEventListener("click", () => {
   counter2++;
-
-  if (counter2 = 1) {
-    text.innerText = "You chose Card 2"
-    cardsKeep++; 
-  }
-
+  text.innerText = "You chose Card 2";
+  cardsKeep++;
+  
+  //if (counter1 = 1) {
+     
+  //}
+  
   if (counter2 >= 2) {
-    text.innerText = "You un-picked Card 2"
-    counter2 = 0
-    cardsKeep--
+  text.innerText = "You un-picked Card 2";
+  counter2 = 0;
+  cardsKeep--; 
+  
   } 
 
 })
 
 cardSlot3.addEventListener("click", () => {
   counter3++;
-
-  if (counter3 = 1) {
-    text.innerText = "You chose Card 3"
-    cardsKeep++; 
-  }
-
+  text.innerText = "You chose Card 3";
+  cardsKeep++;
+  
+  //if (counter1 = 1) {
+     
+  //}
+  
   if (counter3 >= 2) {
-    text.innerText = "You un-picked Card 3"
-    counter3 = 0
-    cardsKeep--
+  text.innerText = "You un-picked Card 3";
+  counter3 = 0;
+  cardsKeep--; 
+  
   } 
 
 })
 
 cardSlot4.addEventListener("click", () => {
   counter4++;
-
-  if (counter4 = 1) {
-    text.innerText = "You chose Card 4"
-    cardsKeep++;
-  }
-
+  text.innerText = "You chose Card 4";
+  cardsKeep++;
+  
+  //if (counter1 = 1) {
+     
+  //}
+  
   if (counter4 >= 2) {
-    text.innerText = "You un-picked Card 4"
-    counter4 = 0
-    cardsKeep--
+  text.innerText = "You un-picked Card 4";
+  counter4 = 0;
+  cardsKeep--; 
+  
   } 
 
 })
 
 cardSlot5.addEventListener("click", () => {
-  text.innerText = "You chose Card 5"
   counter5++;
-
-  if (counter5 = 1) {
-    //text.innerText = "You chose Card 5"
-    cardsKeep++; 
-  }
-
+  text.innerText = "You chose Card 5";
+  cardsKeep++;
+  
+  //if (counter1 = 1) {
+     
+  //}
+  
   if (counter5 >= 2) {
-    text.innerText = "You un-picked Card 5"
-    counter5 = 0
-    cardsKeep--
+  text.innerText = "You un-picked Card 5";
+  counter5 = 0;
+  cardsKeep--; 
+  
   } 
 
 })
