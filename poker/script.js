@@ -53,16 +53,26 @@ dealerCardSlot.addEventListener("click", () => {
 
 // Set event listener for card 1, 2, 3, 4, 5
 let cardsKeep = 0;
-let counter1 = 0;
-let counter2 = 0;
-let counter3 = 0;
-let counter4 = 0;
-let counter5 = 0;
+let counter1 = false;
+let isCard1Selected = false;
+//let counter2 = 0;
+//let counter3 = 0;
+//let counter4 = 0;
+//let counter5 = 0;
 
 cardSlot1.addEventListener("click", () => {
-  counter1++;
+  //counter1++;
+  if (isCard1Selected == false){
+    isCard1Selected = true;
+    // Add logic here to highlight the card
+    cardSlot1.innerHTML = "SELECTED"
+  }
+  else{
+    isCard1Selected = false;
+  }
+  
   text.innerText = "You chose Card 1";
-  cardsKeep++;
+  //cardsKeep++;
   
   //if (counter1 = 1) {
      
