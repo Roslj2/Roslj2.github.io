@@ -67,16 +67,11 @@ cardSlot1.addEventListener("click", () => {
     cardsKeep++; 
   }
   
-  //if (counter1 = 1) {
-    //text.innerText = "You chose Card 1"
-    //text.innerText = `You chose ${value}`
-    //text.innerText = 'You chose ${cardSlot1.value}`
-    //cardsKeep++; 
-  //} 
-    if (counter1 = 2) {
-    text.innerText = "You un-picked Card 1";
-    counter1 = 0;
-    cardsKeep--; 
+  if (counter1 = 2) {
+  text.innerText = "You un-picked Card 1";
+  counter1 = 0;
+  cardsKeep--; 
+  
   } 
 
 cardSlot2.addEventListener("click", () => {
