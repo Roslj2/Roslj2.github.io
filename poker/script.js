@@ -65,7 +65,7 @@ cardSlot1.addEventListener("click", () => {
   if (isCard1Selected == false) {
     isCard1Selected = true;
     // Add logic here to highlight the card
-    cardSlot1.innerHTML = "SELECTED"
+    cardSlot1.className = "selected-card"
   }
   else{
     isCard1Selected = false;
