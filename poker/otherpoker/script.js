@@ -65,7 +65,7 @@ cardSlot1.addEventListener("click", () => {
   }
   else{
     isCard1Selected = false
-    cardSlot1.className = "card"
+    cardSlot1.className = "card-slot-1"
   }
 })
 
@@ -77,7 +77,7 @@ cardSlot2.addEventListener("click", () => {
   }
   else{
     isCard2Selected = false
-    cardSlot2.className = "card"
+    cardSlot2.className = "card-slot-2"
   }
 })
 
@@ -89,7 +89,7 @@ cardSlot3.addEventListener("click", () => {
   }
   else{
     isCard3Selected = false
-    cardSlot3.className = "card"
+    cardSlot3.className = "card-slot-3"
   }
 })
 
@@ -101,7 +101,7 @@ cardSlot4.addEventListener("click", () => {
   }
   else{
     isCard4Selected = false
-    cardSlot4.className = "card"
+    cardSlot4.className = "card-slot-4"
   }
 })
 
@@ -113,7 +113,7 @@ cardSlot5.addEventListener("click", () => {
   }
   else{
     isCard5Selected = false
-    cardSlot5.className = "card"
+    cardSlot5.className = "card-slot-5"
   }
 })
 
@@ -152,6 +152,12 @@ function cleanBeforeRound() {
   cardSlot4.innerHTML = ""
   cardSlot5.innerHTML = ""
   text.innerText = ""
+
+  cardSlot1.className = "card"
+  cardSlot2.className = "card"
+  cardSlot3.className = "card"
+  cardSlot4.className = "card"
+  cardSlot5.className = "card"
 
   updateDeckCount()
 }
