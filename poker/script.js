@@ -60,73 +60,65 @@ let isCard1Selected = false;
 //let counter4 = 0;
 //let counter5 = 0;
 
+// Set event listener for card 1
 cardSlot1.addEventListener("click", () => {
-  //counter1++;
   if (isCard1Selected == false){
-    isCard1Selected = true;
+    isCard1Selected = true
     cardSlot1.className = "selected-card"
   }
   else{
-    isCard1Selected = false;
-    cardSlot1.className = "card-slot-1"
+    isCard1Selected = false
+    cardSlot1.className = "card"
   }
-  
-  //if (counter1 >= 2) 
-  //text.innerText = ""
-
-  cardSlot2.addEventListener("click", () => {
-    //counter2++;
-    if (isCard1Selected == false) {
-      isCard1Selected = true;
-      // Add logic here to highlight the card
-      cardSlot1.className = "selected-card"
-    }
-    else{
-      isCard1Selected = false;
-    }  
-
 })
 
+// Set event listener for card 2
+cardSlot2.addEventListener("click", () => {
+  if (isCard2Selected == false){
+    isCard2Selected = true
+    cardSlot2.className = "selected-card"
+  }
+  else{
+    isCard2Selected = false
+    cardSlot2.className = "card"
+  }
+})
+
+// Set event listener for card 3
 cardSlot3.addEventListener("click", () => {
-  //counter3++;
-  if (isCard1Selected == false) {
-    isCard1Selected = true;
-    // Add logic here to highlight the card
-    cardSlot1.className = "selected-card";
+  if (isCard3Selected == false){
+    isCard3Selected = true
+    cardSlot3.className = "selected-card"
   }
   else{
-    isCard1Selected = false;
+    isCard3Selected = false
+    cardSlot3.className = "card"
   }
-
 })
 
+// Set event listener for card 4
 cardSlot4.addEventListener("click", () => {
-  //counter4++;
-  if (isCard1Selected == false) {
-    isCard1Selected = true;
-    // Add logic here to highlight the card
-    cardSlot1.className = "selected-card"
+  if (isCard4Selected == false){
+    isCard4Selected = true
+    cardSlot4.className = "selected-card"
   }
   else{
-    isCard1Selected = false;
+    isCard4Selected = false
+    cardSlot4.className = "card"
   }
-
 })
 
+// Set event listener for card 5
 cardSlot5.addEventListener("click", () => {
-  //counter5++;
-  if (isCard1Selected == false) {
-    isCard1Selected = true;
-    // Add logic here to highlight the card
-    cardSlot1.className = "selected-card"
+  if (isCard5Selected == false){
+    isCard5Selected = true
+    cardSlot5.className = "selected-card"
   }
   else{
-    isCard1Selected = false;
+    isCard5Selected = false
+    cardSlot5.className = "card"
   }
-
 })
-
-  })
 
 startGame()
 
