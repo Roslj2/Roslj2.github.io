@@ -3,10 +3,10 @@
 }
 
 body {
-  background-color: lightseagreen;
+  background-color: white;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(10, 4rem);
+  grid-template-columns: repeat(6, 4rem);
   grid-template-rows: 7rem 2rem 7rem;
   gap: .5rem;
   cursor: default;
@@ -58,6 +58,20 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 4rem;
+  background-color: white;
+}
+
+.selected-card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 5px solid lightgrey;
+  border-radius: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  background-color: lightgrey;
 }
 
 .card.red {

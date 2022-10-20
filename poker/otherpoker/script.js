@@ -32,6 +32,12 @@ const cardSlot4 = document.querySelector(".card-slot-4")
 const cardSlot5 = document.querySelector(".card-slot-5")
 const text = document.querySelector(".text")
 
+let isCard1Selected = false
+let isCard2Selected = false
+let isCard3Selected = false
+let isCard4Selected = false
+let isCard5Selected = false
+
 //let playerDeck, computerDeck, inRound, stop
 let dealerDeck, inRound, stop
 
@@ -51,9 +57,64 @@ dealerCardSlot.addEventListener("click", () => {
   }
 })
 
-// Set event listener for card #1
+// Set event listener for card 1
 cardSlot1.addEventListener("click", () => {
-  text.innerText = "You clicked cardSlot1"
+  if (isCard1Selected == false){
+    isCard1Selected = true
+    cardSlot1.className = "selected-card"
+  }
+  else{
+    isCard1Selected = false
+    cardSlot1.className = "card"
+  }
+})
+
+// Set event listener for card 2
+cardSlot2.addEventListener("click", () => {
+  if (isCard2Selected == false){
+    isCard2Selected = true
+    cardSlot2.className = "selected-card"
+  }
+  else{
+    isCard2Selected = false
+    cardSlot2.className = "card"
+  }
+})
+
+// Set event listener for card 3
+cardSlot3.addEventListener("click", () => {
+  if (isCard3Selected == false){
+    isCard3Selected = true
+    cardSlot3.className = "selected-card"
+  }
+  else{
+    isCard3Selected = false
+    cardSlot3.className = "card"
+  }
+})
+
+// Set event listener for card 4
+cardSlot4.addEventListener("click", () => {
+  if (isCard4Selected == false){
+    isCard4Selected = true
+    cardSlot4.className = "selected-card"
+  }
+  else{
+    isCard4Selected = false
+    cardSlot4.className = "card"
+  }
+})
+
+// Set event listener for card 5
+cardSlot5.addEventListener("click", () => {
+  if (isCard5Selected == false){
+    isCard5Selected = true
+    cardSlot5.className = "selected-card"
+  }
+  else{
+    isCard5Selected = false
+    cardSlot5.className = "card"
+  }
 })
 
 
@@ -61,7 +122,7 @@ startGame()
 
 function startGame() {
 
-  text.innerText = "Inside start game"
+  text.innerText = "Inside strart game"
 
   const deck = new Deck()
   deck.shuffle()
@@ -114,7 +175,7 @@ function flipCards() {
   cardSlot2.appendChild(card2.getHTML())
   cardSlot3.appendChild(card3.getHTML())
   cardSlot4.appendChild(card4.getHTML())
-  cardSlot1.appendChild(card5.getHTML())
+  cardSlot5.appendChild(card5.getHTML())
 
   updateDeckCount()
 
