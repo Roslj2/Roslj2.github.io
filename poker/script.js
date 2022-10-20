@@ -68,7 +68,7 @@ cardSlot1.addEventListener("click", () => {
   }
   else{
     isCard1Selected = false;
-    cardSlot1.className = "card"
+    //cardSlot1.className = "card"
   }
   
   //if (counter1 >= 2) 
