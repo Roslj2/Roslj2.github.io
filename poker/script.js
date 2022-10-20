@@ -71,89 +71,58 @@ cardSlot1.addEventListener("click", () => {
     isCard1Selected = false;
   }
   
-  text.innerText = "You chose Card 1";
-  //cardsKeep++;
-  
-  //if (counter1 = 1) {
-     
-  //}
-  
-  if (counter1 >= 2) {
-  text.innerText = "You un-picked Card 1";
-  counter1 = 0;
-  cardsKeep--; 
-  
-  } 
+  //if (counter1 >= 2) 
+  //text.innerText = ""
 
-cardSlot2.addEventListener("click", () => {
-  counter2++;
-  text.innerText = "You chose Card 2";
-  cardsKeep++;
-  
-  //if (counter1 = 1) {
-     
-  //}
-  
-  if (counter2 >= 2) {
-  text.innerText = "You un-picked Card 2";
-  counter2 = 0;
-  cardsKeep--; 
-  
-  } 
+  cardSlot2.addEventListener("click", () => {
+    //counter2++;
+    if (isCard1Selected == false) {
+      isCard1Selected = true;
+      // Add logic here to highlight the card
+      cardSlot1.className = "selected-card"
+    }
+    else{
+      isCard1Selected = false;
+    }  
 
 })
 
 cardSlot3.addEventListener("click", () => {
-  counter3++;
-  text.innerText = "You chose Card 3";
-  cardsKeep++;
-  
-  //if (counter1 = 1) {
-     
-  //}
-  
-  if (counter3 >= 2) {
-  text.innerText = "You un-picked Card 3";
-  counter3 = 0;
-  cardsKeep--; 
-  
-  } 
+  //counter3++;
+  if (isCard1Selected == false) {
+    isCard1Selected = true;
+    // Add logic here to highlight the card
+    cardSlot1.className = "selected-card"
+  }
+  else{
+    isCard1Selected = false;
+  }
 
 })
 
 cardSlot4.addEventListener("click", () => {
-  counter4++;
-  text.innerText = "You chose Card 4";
-  cardsKeep++;
-  
-  //if (counter1 = 1) {
-     
-  //}
-  
-  if (counter4 >= 2) {
-  text.innerText = "You un-picked Card 4";
-  counter4 = 0;
-  cardsKeep--; 
-  
-  } 
+  //counter4++;
+  if (isCard1Selected == false) {
+    isCard1Selected = true;
+    // Add logic here to highlight the card
+    cardSlot1.className = "selected-card"
+  }
+  else{
+    isCard1Selected = false;
+  }
 
 })
 
 cardSlot5.addEventListener("click", () => {
-  counter5++;
-  text.innerText = "You chose Card 5";
-  cardsKeep++;
-  
-  //if (counter1 = 1) {
-     
-  //}
-  
-  if (counter5 >= 2) {
-  text.innerText = "You un-picked Card 5";
-  counter5 = 0;
-  cardsKeep--; 
-  
-  } 
+  //counter5++;
+  if (isCard1Selected == false) {
+    isCard1Selected = true;
+    // Add logic here to highlight the card
+    cardSlot1.className = "selected-card"
+  }
+  else{
+    isCard1Selected = false;
+  }
 
 })
 
