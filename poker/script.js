@@ -62,13 +62,13 @@ let isCard1Selected = false;
 
 cardSlot1.addEventListener("click", () => {
   //counter1++;
-  if (isCard1Selected == false) {
+  if (isCard1Selected == false){
     isCard1Selected = true;
-    // Add logic here to highlight the card
     cardSlot1.className = "selected-card"
   }
   else{
     isCard1Selected = false;
+    cardSlot1.className = "card"
   }
   
   //if (counter1 >= 2) 
