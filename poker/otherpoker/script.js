@@ -59,61 +59,71 @@ dealerCardSlot.addEventListener("click", () => {
 
 // Set event listener for card 1
 cardSlot1.addEventListener("click", () => {
-  if (isCard1Selected == false){
-    isCard1Selected = true
-    cardSlot1.className = "selected-card"
-  }
-  else{
-    isCard1Selected = false
-    cardSlot1.className = "card-slot-1"
+  if (inRound) {
+    if (isCard1Selected == false){
+      isCard1Selected = true
+      cardSlot1.className = "selected-card"
+    }
+    else{
+      isCard1Selected = false
+      cardSlot1.className = "card-slot-1"
+    }
   }
 })
 
 // Set event listener for card 2
 cardSlot2.addEventListener("click", () => {
-  if (isCard2Selected == false){
-    isCard2Selected = true
-    cardSlot2.className = "selected-card"
-  }
-  else{
-    isCard2Selected = false
-    cardSlot2.className = "card-slot-2"
+  if (inRound) {
+    if (isCard2Selected == false){
+      isCard2Selected = true
+      cardSlot2.className = "selected-card"
+    }
+    else{
+      isCard2Selected = false
+      cardSlot2.className = "card-slot-2"
+    }
   }
 })
 
 // Set event listener for card 3
 cardSlot3.addEventListener("click", () => {
-  if (isCard3Selected == false){
-    isCard3Selected = true
-    cardSlot3.className = "selected-card"
-  }
-  else{
-    isCard3Selected = false
-    cardSlot3.className = "card-slot-3"
+  if (inRound) {
+    if (isCard3Selected == false){
+      isCard3Selected = true
+      cardSlot3.className = "selected-card"
+    }
+    else{
+      isCard3Selected = false
+      cardSlot3.className = "card-slot-3"
+    }
   }
 })
 
 // Set event listener for card 4
 cardSlot4.addEventListener("click", () => {
-  if (isCard4Selected == false){
-    isCard4Selected = true
-    cardSlot4.className = "selected-card"
-  }
-  else{
-    isCard4Selected = false
-    cardSlot4.className = "card-slot-4"
+  if (inRound){
+    if (isCard4Selected == false){
+      isCard4Selected = true
+      cardSlot4.className = "selected-card"
+    }
+    else{
+      isCard4Selected = false
+      cardSlot4.className = "card-slot-4"
+    }
   }
 })
 
 // Set event listener for card 5
 cardSlot5.addEventListener("click", () => {
-  if (isCard5Selected == false){
-    isCard5Selected = true
-    cardSlot5.className = "selected-card"
-  }
-  else{
-    isCard5Selected = false
-    cardSlot5.className = "card-slot-5"
+  if (inRound){
+    if (isCard5Selected == false){
+      isCard5Selected = true
+      cardSlot5.className = "selected-card"
+    }
+    else{
+      isCard5Selected = false
+      cardSlot5.className = "card-slot-5"
+    }
   }
 })
 
