@@ -153,11 +153,17 @@ function cleanBeforeRound() {
   cardSlot5.innerHTML = ""
   text.innerText = ""
 
-  cardSlot1.className = "card"
-  cardSlot2.className = "card"
-  cardSlot3.className = "card"
-  cardSlot4.className = "card"
-  cardSlot5.className = "card"
+  cardSlot1.className = "card-slot-1"
+  cardSlot2.className = "card-slot-2"
+  cardSlot3.className = "card-slot-3"
+  cardSlot4.className = "card-slot-4"
+  cardSlot5.className = "card-slot-5"
+
+  isCard1Selected = false
+  isCard2Selected = false
+  isCard3Selected = false
+  isCard4Selected = false
+  isCard5Selected = false
 
   updateDeckCount()
 }
