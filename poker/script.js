@@ -83,6 +83,7 @@ cardSlot1.addEventListener("click", () => {
     }
     else{
       isCard1Selected = false;
+      cardSlot1.className = "card-slot-2"
     }  
 
 })
@@ -96,6 +97,7 @@ cardSlot3.addEventListener("click", () => {
   }
   else{
     isCard1Selected = false;
+    cardSlot1.className = "card-slot-3"
   }
 
 })
@@ -109,6 +111,7 @@ cardSlot4.addEventListener("click", () => {
   }
   else{
     isCard1Selected = false;
+    cardSlot1.className = "card-slot-4"
   }
 
 })
@@ -122,6 +125,7 @@ cardSlot5.addEventListener("click", () => {
   }
   else{
     isCard1Selected = false;
+    cardSlot1.className = "card-slot-5"
   }
 
 })
