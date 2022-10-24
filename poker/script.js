@@ -64,7 +64,7 @@ cardSlot1.addEventListener("click", () => {
 
   if (isCard1Selected == false){
     isCard1Selected = true;
-    cardSlot1.className = "selected-card"
+    cardSlot1.className = "selected-card1"
   }
   else{
     isCard1Selected = false;
@@ -79,7 +79,7 @@ cardSlot1.addEventListener("click", () => {
     if (isCard1Selected == false) {
       isCard1Selected = true;
       // Add logic here to highlight the card
-      cardSlot1.className = "selected-card"
+      cardSlot1.className = "selected-card2"
     }
     else{
       isCard1Selected = false;
@@ -93,7 +93,7 @@ cardSlot3.addEventListener("click", () => {
   if (isCard1Selected == false) {
     isCard1Selected = true;
     // Add logic here to highlight the card
-    cardSlot1.className = "selected-card";
+    cardSlot1.className = "selected-card3";
   }
   else{
     isCard1Selected = false;
@@ -107,7 +107,7 @@ cardSlot4.addEventListener("click", () => {
   if (isCard1Selected == false) {
     isCard1Selected = true;
     // Add logic here to highlight the card
-    cardSlot1.className = "selected-card"
+    cardSlot1.className = "selected-card4"
   }
   else{
     isCard1Selected = false;
@@ -121,7 +121,7 @@ cardSlot5.addEventListener("click", () => {
   if (isCard1Selected == false) {
     isCard1Selected = true;
     // Add logic here to highlight the card
-    cardSlot1.className = "selected-card"
+    cardSlot1.className = "selected-card5"
   }
   else{
     isCard1Selected = false;

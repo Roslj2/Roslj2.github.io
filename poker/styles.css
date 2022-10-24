@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: lightgreen;
+  background-color: lightblue;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(6, 4rem);
@@ -63,7 +63,7 @@ body {
   user-select: none;
 }
 
-.selected-card {
+.selected-card1 {
   position: relative;
   height: 100%;
   width: 100%;
@@ -77,6 +77,61 @@ body {
   user-select: none;
 }
 
+.selected-card2 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 1px solid yellow;
+  border-radius: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  background-color: lightgrey;
+  user-select: none;
+}
+
+.selected-card3 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 1px solid yellow;
+  border-radius: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  background-color: lightgrey;
+  user-select: none;
+}
+
+.selected-card4 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 1px solid yellow;
+  border-radius: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  background-color: lightgrey;
+  user-select: none;
+}
+
+.selected-card5 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 1px solid yellow;
+  border-radius: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  background-color: lightgrey;
+  user-select: none;
+}
 
 .card.red {
   color: red;
