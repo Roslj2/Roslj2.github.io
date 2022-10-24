@@ -52,8 +52,8 @@ dealerCardSlot.addEventListener("click", () => {
 })
 
 // Set event listener for card 1, 2, 3, 4, 5
-let cardsKeep = 0;
-let counter1 = false;
+//let cardsKeep = 0;
+//let counter1 = false;
 let isCard1Selected = false;
 let isCard2Selected = false;
 let isCard3Selected = false;
@@ -127,6 +127,12 @@ cardSlot5.addEventListener("click", () => {
 })
 
   })
+
+  //if (dealerCardSlot.addEventListener("click", () => {) {
+    
+  //} else {
+    
+  //}
 
 startGame()
 
