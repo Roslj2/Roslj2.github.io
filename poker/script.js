@@ -64,7 +64,7 @@ cardSlot1.addEventListener("click", () => {
 
   if (isCard1Selected == false){
     isCard1Selected = true;
-    cardSlot1.className = "selected-card1"
+    cardSlot1.className = "selected-card card-slot-1"
   }
   else{
     isCard1Selected = false;
@@ -75,57 +75,49 @@ cardSlot1.addEventListener("click", () => {
   //text.innerText = ""
 
   cardSlot2.addEventListener("click", () => {
-    //counter2++;
-    if (isCard1Selected == false) {
-      isCard1Selected = true;
-      // Add logic here to highlight the card
-      cardSlot1.className = "selected-card2"
+    if (isCard2Selected == false){
+      isCard2Selected = true;
+      cardSlot2.className = "selected-card card-slot-2"
     }
     else{
-      isCard1Selected = false;
-      cardSlot1.className = "card-slot-2"
-    }  
+      isCard2Selected = false;
+      cardSlot2.className = "card-slot-2"
+    }
 
 })
 
 cardSlot3.addEventListener("click", () => {
-  //counter3++;
-  if (isCard1Selected == false) {
-    isCard1Selected = true;
-    // Add logic here to highlight the card
-    cardSlot1.className = "selected-card3";
+  if (isCard3Selected == false){
+    isCard3Selected = true;
+    cardSlot3.className = "selected-card card-slot-3"
   }
   else{
-    isCard1Selected = false;
-    cardSlot1.className = "card-slot-3"
+    isCard3Selected = false;
+    cardSlot3.className = "card-slot-3"
   }
 
 })
 
 cardSlot4.addEventListener("click", () => {
-  //counter4++;
-  if (isCard1Selected == false) {
-    isCard1Selected = true;
-    // Add logic here to highlight the card
-    cardSlot1.className = "selected-card4"
+  if (isCard4Selected == false){
+    isCard4Selected = true;
+    cardSlot4.className = "selected-card card-slot-4"
   }
   else{
-    isCard1Selected = false;
-    cardSlot1.className = "card-slot-4"
+    isCard4Selected = false;
+    cardSlot4.className = "card-slot-4"
   }
 
 })
 
 cardSlot5.addEventListener("click", () => {
-  //counter5++;
-  if (isCard1Selected == false) {
-    isCard1Selected = true;
-    // Add logic here to highlight the card
-    cardSlot1.className = "selected-card5"
+  if (isCard5Selected == false){
+    isCard5Selected = true;
+    cardSlot5.className = "selected-card card-slot-5"
   }
   else{
-    isCard1Selected = false;
-    cardSlot1.className = "card-slot-5"
+    isCard5Selected = false;
+    cardSlot5.className = "card-slot-5"
   }
 
 })
