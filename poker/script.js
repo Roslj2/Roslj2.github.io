@@ -32,6 +32,12 @@ const cardSlot4 = document.querySelector(".card-slot-4")
 const cardSlot5 = document.querySelector(".card-slot-5")
 const text = document.querySelector(".text")
 
+let isCard1Selected = false
+let isCard2Selected = false
+let isCard3Selected = false
+let isCard4Selected = false
+let isCard5Selected = false
+
 //let playerDeck, computerDeck, inRound, stop
 let dealerDeck, inRound, stop
 
@@ -51,92 +57,82 @@ dealerCardSlot.addEventListener("click", () => {
   }
 })
 
-// Set event listener for card 1, 2, 3, 4, 5
-let cardsKeep = 0;
-let counter1 = false;
-let isCard1Selected = false;
-//let counter2 = 0;
-//let counter3 = 0;
-//let counter4 = 0;
-//let counter5 = 0;
-
+// Set event listener for card 1
 cardSlot1.addEventListener("click", () => {
-
-  if (isCard1Selected == false){
-    isCard1Selected = true;
-    cardSlot1.className = "selected-card1"
-  }
-  else{
-    isCard1Selected = false;
-    cardSlot1.className = "card-slot-1"
-  }
-  
-  //if (counter1 >= 2) 
-  //text.innerText = ""
-
-  cardSlot2.addEventListener("click", () => {
-    //counter2++;
-    if (isCard1Selected == false) {
-      isCard1Selected = true;
-      // Add logic here to highlight the card
-      cardSlot1.className = "selected-card2"
+  if (inRound) {
+    if (isCard1Selected == false){
+      isCard1Selected = true
+      cardSlot1.className = "selected-card"
     }
     else{
-      isCard1Selected = false;
-      cardSlot1.className = "card-slot-2"
-    }  
-
+      isCard1Selected = false
+      cardSlot1.className = "card-slot-1"
+    }
+  }
 })
 
+// Set event listener for card 2
+cardSlot2.addEventListener("click", () => {
+  if (inRound) {
+    if (isCard2Selected == false){
+      isCard2Selected = true
+      cardSlot2.className = "selected-card"
+    }
+    else{
+      isCard2Selected = false
+      cardSlot2.className = "card-slot-2"
+    }
+  }
+})
+
+// Set event listener for card 3
 cardSlot3.addEventListener("click", () => {
-  //counter3++;
-  if (isCard1Selected == false) {
-    isCard1Selected = true;
-    // Add logic here to highlight the card
-    cardSlot1.className = "selected-card3";
+  if (inRound) {
+    if (isCard3Selected == false){
+      isCard3Selected = true
+      cardSlot3.className = "selected-card"
+    }
+    else{
+      isCard3Selected = false
+      cardSlot3.className = "card-slot-3"
+    }
   }
-  else{
-    isCard1Selected = false;
-    cardSlot1.className = "card-slot-3"
-  }
-
 })
 
+// Set event listener for card 4
 cardSlot4.addEventListener("click", () => {
-  //counter4++;
-  if (isCard1Selected == false) {
-    isCard1Selected = true;
-    // Add logic here to highlight the card
-    cardSlot1.className = "selected-card4"
+  if (inRound){
+    if (isCard4Selected == false){
+      isCard4Selected = true
+      cardSlot4.className = "selected-card"
+    }
+    else{
+      isCard4Selected = false
+      cardSlot4.className = "card-slot-4"
+    }
   }
-  else{
-    isCard1Selected = false;
-    cardSlot1.className = "card-slot-4"
-  }
-
 })
 
+// Set event listener for card 5
 cardSlot5.addEventListener("click", () => {
-  //counter5++;
-  if (isCard1Selected == false) {
-    isCard1Selected = true;
-    // Add logic here to highlight the card
-    cardSlot1.className = "selected-card5"
+  if (inRound){
+    if (isCard5Selected == false){
+      isCard5Selected = true
+      cardSlot5.className = "selected-card"
+    }
+    else{
+      isCard5Selected = false
+      cardSlot5.className = "card-slot-5"
+    }
   }
-  else{
-    isCard1Selected = false;
-    cardSlot1.className = "card-slot-5"
-  }
-
 })
 
-  })
 
 startGame()
 
 function startGame() {
 
-  text.innerText = "Inside start game"
+  text.innerText = "Inside strart game"
 
   const deck = new Deck()
   deck.shuffle()
@@ -166,6 +162,18 @@ function cleanBeforeRound() {
   cardSlot4.innerHTML = ""
   cardSlot5.innerHTML = ""
   text.innerText = ""
+
+  cardSlot1.className = "card-slot-1"
+  cardSlot2.className = "card-slot-2"
+  cardSlot3.className = "card-slot-3"
+  cardSlot4.className = "card-slot-4"
+  cardSlot5.className = "card-slot-5"
+
+  isCard1Selected = false
+  isCard2Selected = false
+  isCard3Selected = false
+  isCard4Selected = false
+  isCard5Selected = false
 
   updateDeckCount()
 }
@@ -258,4 +266,8 @@ function updateDeckCount() {
 
 function isRoundWinner(cardOne, cardTwo) {
   return CARD_VALUE_MAP[cardOne.value] > CARD_VALUE_MAP[cardTwo.value]
+}
+
+function isGameOver(deck) {
+  //return deck.numberOfCards === 0
 }
