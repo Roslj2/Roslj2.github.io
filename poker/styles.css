@@ -3,14 +3,14 @@
 }
 
 body {
-  background-color: lightblue;
+  background-color: white;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(6, 4rem);
   grid-template-rows: 7rem 2rem 7rem;
   gap: .5rem;
-  cursor: default
-  justify-content; center;
+  cursor: default;
+  justify-content: center;
   padding-top: 1rem;
   border: 1px solid black;
 }
