@@ -291,6 +291,11 @@ function isWinningHand(card1, card2, card3, card4, card5) {
     }
   }
 
+  // Check for a flush (matching suits)
+  if (card1.suit == card2.suit && card1.suit == card3.suit && card1.suit == card3.suit && card1.suit == card4.suit && card1.suit == card5.suit) {
+    text.innerText = "You have a flush!"
+  }
+
 
 }
 
