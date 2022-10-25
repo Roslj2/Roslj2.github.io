@@ -32,6 +32,8 @@ const cardSlot4 = document.querySelector(".card-slot-4")
 const cardSlot5 = document.querySelector(".card-slot-5")
 const text = document.querySelector(".text")
 
+let card1, card2, card3, card4, card5
+
 let isCard1Selected = false
 let isCard2Selected = false
 let isCard3Selected = false
@@ -40,21 +42,25 @@ let isCard5Selected = false
 
 //let playerDeck, computerDeck, inRound, stop
 let dealerDeck, inRound, stop
+//let roundNumber = 0 // 0 = new game; 1 = first hand; 2 = final hand; 3 = double or nothing
 
 //document.addEventListener("click", () => {
 dealerCardSlot.addEventListener("click", () => {
-  //text.innerText = "You clicked"
 
   if (stop) {
     startGame()
     return
   }
 
+  flipCards()
+
+/*
   if (inRound) {
     cleanBeforeRound()
   } else {
     flipCards()
   }
+*/
 })
 
 // Set event listener for card 1
@@ -132,7 +138,8 @@ startGame()
 
 function startGame() {
 
-  text.innerText = "Inside strart game"
+  text.innerText = "Inside start game"
+  //roundNumber = 1
 
   const deck = new Deck()
   deck.shuffle()
@@ -181,24 +188,53 @@ function cleanBeforeRound() {
 function flipCards() {
   inRound = true
 
-  //const playerCard = playerDeck.pop()
-  //const computerCard = computerDeck.pop()
+//  if (isCard1Selected){
+//    text.innerText = "Yes Marc, card 1 is selected"
+//  }
 
+/*
   const card1 = dealerDeck.pop()
   const card2 = dealerDeck.pop()
   const card3 = dealerDeck.pop()
   const card4 = dealerDeck.pop()
   const card5 = dealerDeck.pop()
 
-  //playerCardSlot.appendChild(playerCard.getHTML())
-  //computerCardSlot.appendChild(computerCard.getHTML())
-
   cardSlot1.appendChild(card1.getHTML())
   cardSlot2.appendChild(card2.getHTML())
   cardSlot3.appendChild(card3.getHTML())
   cardSlot4.appendChild(card4.getHTML())
   cardSlot5.appendChild(card5.getHTML())
+*/
 
+  //let tempCard1, tempCard2, tempCard3, tempCard4, tempCard5
+
+  if (!isCard1Selected) {
+    cardSlot1.innerHTML = ""
+    card1 = dealerDeck.pop()
+    cardSlot1.appendChild(card1.getHTML())
+  }
+  if (!isCard2Selected) {
+    cardSlot2.innerHTML = ""
+    card2 = dealerDeck.pop()
+    cardSlot2.appendChild(card2.getHTML())
+  }
+  if (!isCard3Selected) {
+    cardSlot3.innerHTML = ""
+    card3 = dealerDeck.pop()
+    cardSlot3.appendChild(card3.getHTML())
+  }
+  if (!isCard4Selected) {
+    cardSlot4.innerHTML = ""
+    card4 = dealerDeck.pop()
+    cardSlot4.appendChild(card4.getHTML())
+  }
+  if (!isCard5Selected) {
+    cardSlot5.innerHTML = ""
+    card5 = dealerDeck.pop()
+    cardSlot5.appendChild(card5.getHTML())
+  }
+
+  text.innerText = ""
   updateDeckCount()
 
   isWinningHand(card1, card2, card3, card4, card5)
