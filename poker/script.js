@@ -32,113 +32,114 @@ const cardSlot4 = document.querySelector(".card-slot-4")
 const cardSlot5 = document.querySelector(".card-slot-5")
 const text = document.querySelector(".text")
 
+let card1, card2, card3, card4, card5
+
+let isCard1Selected = false
+let isCard2Selected = false
+let isCard3Selected = false
+let isCard4Selected = false
+let isCard5Selected = false
+
 //let playerDeck, computerDeck, inRound, stop
 let dealerDeck, inRound, stop
+//let roundNumber = 0 // 0 = new game; 1 = first hand; 2 = final hand; 3 = double or nothing
 
 //document.addEventListener("click", () => {
 dealerCardSlot.addEventListener("click", () => {
-  //text.innerText = "You clicked"
 
   if (stop) {
     startGame()
     return
   }
 
+  flipCards()
+
+/*
   if (inRound) {
     cleanBeforeRound()
   } else {
     flipCards()
   }
+*/
 })
 
-// Set event listener for card 1, 2, 3, 4, 5
-//let cardsKeep = 0;
-//let counter1 = false;
-let isCard1Selected = false;
-let isCard2Selected = false;
-let isCard3Selected = false;
-let isCard4Selected = false;
-let isCard5Selected = false;
-//let counter2 = 0;
-//let counter3 = 0;
-//let counter4 = 0;
-//let counter5 = 0;
-
+// Set event listener for card 1
 cardSlot1.addEventListener("click", () => {
-
-  if (isCard1Selected == false){
-    isCard1Selected = true;
-    cardSlot1.className = "selected-card card-slot-1"
-  }
-  else{
-    isCard1Selected = false;
-    cardSlot1.className = "card-slot-1"
-  }
-  
-  //if (counter1 >= 2) 
-  //text.innerText = ""
-
-  cardSlot2.addEventListener("click", () => {
-    if (isCard2Selected == false){
-      isCard2Selected = true;
-      cardSlot2.className = "selected-card card-slot-2"
+  if (inRound) {
+    if (isCard1Selected == false){
+      isCard1Selected = true
+      cardSlot1.className = "selected-card"
     }
     else{
-      isCard2Selected = false;
+      isCard1Selected = false
+      cardSlot1.className = "card-slot-1"
+    }
+  }
+})
+
+// Set event listener for card 2
+cardSlot2.addEventListener("click", () => {
+  if (inRound) {
+    if (isCard2Selected == false){
+      isCard2Selected = true
+      cardSlot2.className = "selected-card"
+    }
+    else{
+      isCard2Selected = false
       cardSlot2.className = "card-slot-2"
     }
-
+  }
 })
 
+// Set event listener for card 3
 cardSlot3.addEventListener("click", () => {
-  if (isCard3Selected == false){
-    isCard3Selected = true;
-    cardSlot3.className = "selected-card card-slot-3"
+  if (inRound) {
+    if (isCard3Selected == false){
+      isCard3Selected = true
+      cardSlot3.className = "selected-card"
+    }
+    else{
+      isCard3Selected = false
+      cardSlot3.className = "card-slot-3"
+    }
   }
-  else{
-    isCard3Selected = false;
-    cardSlot3.className = "card-slot-3"
-  }
-
 })
 
+// Set event listener for card 4
 cardSlot4.addEventListener("click", () => {
-  if (isCard4Selected == false){
-    isCard4Selected = true;
-    cardSlot4.className = "selected-card card-slot-4"
+  if (inRound){
+    if (isCard4Selected == false){
+      isCard4Selected = true
+      cardSlot4.className = "selected-card"
+    }
+    else{
+      isCard4Selected = false
+      cardSlot4.className = "card-slot-4"
+    }
   }
-  else{
-    isCard4Selected = false;
-    cardSlot4.className = "card-slot-4"
-  }
-
 })
 
+// Set event listener for card 5
 cardSlot5.addEventListener("click", () => {
-  if (isCard5Selected == false){
-    isCard5Selected = true;
-    cardSlot5.className = "selected-card card-slot-5"
+  if (inRound){
+    if (isCard5Selected == false){
+      isCard5Selected = true
+      cardSlot5.className = "selected-card"
+    }
+    else{
+      isCard5Selected = false
+      cardSlot5.className = "card-slot-5"
+    }
   }
-  else{
-    isCard5Selected = false;
-    cardSlot5.className = "card-slot-5"
-  }
-
 })
 
-  })
-
-  //if (dealerCardSlot.addEventListener("click", () => {) {
-    
-  //} else {
-    
-  //}
 
 startGame()
 
 function startGame() {
 
   text.innerText = "Inside start game"
+  //roundNumber = 1
 
   const deck = new Deck()
   deck.shuffle()
@@ -169,30 +170,71 @@ function cleanBeforeRound() {
   cardSlot5.innerHTML = ""
   text.innerText = ""
 
+  cardSlot1.className = "card-slot-1"
+  cardSlot2.className = "card-slot-2"
+  cardSlot3.className = "card-slot-3"
+  cardSlot4.className = "card-slot-4"
+  cardSlot5.className = "card-slot-5"
+
+  isCard1Selected = false
+  isCard2Selected = false
+  isCard3Selected = false
+  isCard4Selected = false
+  isCard5Selected = false
+
   updateDeckCount()
 }
 
 function flipCards() {
   inRound = true
 
-  //const playerCard = playerDeck.pop()
-  //const computerCard = computerDeck.pop()
+//  if (isCard1Selected){
+//    text.innerText = "Yes Marc, card 1 is selected"
+//  }
 
+/*
   const card1 = dealerDeck.pop()
   const card2 = dealerDeck.pop()
   const card3 = dealerDeck.pop()
   const card4 = dealerDeck.pop()
   const card5 = dealerDeck.pop()
 
-  //playerCardSlot.appendChild(playerCard.getHTML())
-  //computerCardSlot.appendChild(computerCard.getHTML())
-
   cardSlot1.appendChild(card1.getHTML())
   cardSlot2.appendChild(card2.getHTML())
   cardSlot3.appendChild(card3.getHTML())
   cardSlot4.appendChild(card4.getHTML())
   cardSlot5.appendChild(card5.getHTML())
+*/
 
+  //let tempCard1, tempCard2, tempCard3, tempCard4, tempCard5
+
+  if (!isCard1Selected) {
+    cardSlot1.innerHTML = ""
+    card1 = dealerDeck.pop()
+    cardSlot1.appendChild(card1.getHTML())
+  }
+  if (!isCard2Selected) {
+    cardSlot2.innerHTML = ""
+    card2 = dealerDeck.pop()
+    cardSlot2.appendChild(card2.getHTML())
+  }
+  if (!isCard3Selected) {
+    cardSlot3.innerHTML = ""
+    card3 = dealerDeck.pop()
+    cardSlot3.appendChild(card3.getHTML())
+  }
+  if (!isCard4Selected) {
+    cardSlot4.innerHTML = ""
+    card4 = dealerDeck.pop()
+    cardSlot4.appendChild(card4.getHTML())
+  }
+  if (!isCard5Selected) {
+    cardSlot5.innerHTML = ""
+    card5 = dealerDeck.pop()
+    cardSlot5.appendChild(card5.getHTML())
+  }
+
+  text.innerText = ""
   updateDeckCount()
 
   isWinningHand(card1, card2, card3, card4, card5)
@@ -249,6 +291,11 @@ function isWinningHand(card1, card2, card3, card4, card5) {
     }
   }
 
+  // Check for a flush (matching suits)
+  if (card1.suit == card2.suit && card1.suit == card3.suit && card1.suit == card3.suit && card1.suit == card4.suit && card1.suit == card5.suit) {
+    text.innerText = "You have a flush!"
+  }
+
 
 }
 
@@ -260,4 +307,8 @@ function updateDeckCount() {
 
 function isRoundWinner(cardOne, cardTwo) {
   return CARD_VALUE_MAP[cardOne.value] > CARD_VALUE_MAP[cardTwo.value]
+}
+
+function isGameOver(deck) {
+  //return deck.numberOfCards === 0
 }
