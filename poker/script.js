@@ -241,10 +241,12 @@ function flipCards() {
   text.innerText = ""
   updateDeckCount()
 
+
   if (roundNumber == 2) {
     isWinningHand(card1, card2, card3, card4, card5)
     stop = true
     roundNumber = 0
+    promptDoubleOrNothing()
 
   if (dealerDeck.numberOfCards < 5) {
     stop = true
@@ -320,4 +322,8 @@ function isRoundWinner(cardOne, cardTwo) {
 
 function isGameOver(deck) {
   //return deck.numberOfCards === 0
+}
+
+function promptDoubleOrNothing() {
+  text.innerText = "Would you like double or nothing?"
 }
