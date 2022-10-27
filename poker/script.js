@@ -243,6 +243,8 @@ function flipCards() {
 
   if (roundNumber == 2) {
     isWinningHand(card1, card2, card3, card4, card5)
+    stop = true
+    roundNumber = 0
 
   if (dealerDeck.numberOfCards < 5) {
     stop = true
