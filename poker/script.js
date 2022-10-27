@@ -341,6 +341,6 @@ function isGameOver(deck) {
 function promptDoubleOrNothing() {
   text.innerText = "Would you like double or nothing?"
   let btn = document.createElement("button");
-  btn.innerHTML = "Double or Nothing?";
+  btn.innerText = "Double or Nothing?";
   document.body.appendChild(btn);
 }
