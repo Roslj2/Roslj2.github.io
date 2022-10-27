@@ -56,9 +56,11 @@ dealerCardSlot.addEventListener("click", () => {
 
   roundNumber++;
 
- if (inRound) { 
   flipCards()
- }
+
+  if (inRound) {
+    flipCards()
+  }
 
 /*
   if (inRound) {
