@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: lightblue;
+  background-color: lightgreen;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(6, 4rem);
@@ -47,6 +47,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.btn {
+  position: relative;
+  height: 25%;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  background-color: white;
+  user-select: none;
 }
 
 .card {

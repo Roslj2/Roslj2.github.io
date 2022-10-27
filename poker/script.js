@@ -338,9 +338,25 @@ function isGameOver(deck) {
   //return deck.numberOfCards === 0
 }
 
+function doubleOrNothing() {
+
+}
+
+let btn = document.createElement("button");
+
 function promptDoubleOrNothing() {
   text.innerText = "Would you like double or nothing?"
-  let btn = document.createElement("button");
+  
   btn.innerText = "Double or Nothing?";
   document.body.appendChild(btn);
+
+  if (roundNumber == 0) {
+    return promptDoubleOrNothing
+  }
+
+  btn.addEventListener("click", () => {
+    doubleOrNothing()
+
+  })
+
 }
