@@ -248,6 +248,7 @@ function flipCards() {
     stop = true
     roundNumber = 0
     promptDoubleOrNothing()
+    inRound = false
 
   if (dealerDeck.numberOfCards < 5) {
     stop = true
