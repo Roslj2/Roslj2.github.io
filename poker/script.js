@@ -39,6 +39,7 @@ let isCard2Selected = false
 let isCard3Selected = false
 let isCard4Selected = false
 let isCard5Selected = false
+let roundNumber = 0
 
 //let playerDeck, computerDeck, inRound, stop
 let dealerDeck, inRound, stop
@@ -52,7 +53,10 @@ dealerCardSlot.addEventListener("click", () => {
     return
   }
 
+  roundNumber++;
+
   flipCards()
+
 
 /*
   if (inRound) {
@@ -237,12 +241,15 @@ function flipCards() {
   text.innerText = ""
   updateDeckCount()
 
-  isWinningHand(card1, card2, card3, card4, card5)
+  if (roundNumber == 2) {
+    isWinningHand(card1, card2, card3, card4, card5)
 
   if (dealerDeck.numberOfCards < 5) {
     stop = true
     text.innerText = "Game over!"
   }
+
+}
 
 /*
   if (isRoundWinner(playerCard, computerCard)) {
