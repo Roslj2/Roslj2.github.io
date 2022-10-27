@@ -340,7 +340,8 @@ function isGameOver(deck) {
 }
 
 function doubleOrNothing() {
-
+  inRound = true
+  return promptDoubleOrNothing
 }
 
 let btn = document.createElement("button");
