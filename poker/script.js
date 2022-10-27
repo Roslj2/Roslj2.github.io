@@ -347,7 +347,7 @@ function doubleOrNothing() {
 let btn = document.createElement("button");
 
 function promptDoubleOrNothing() {
-  text.innerText = "Would you like double or nothing?"
+  //text.innerText = "Would you like double or nothing?"
   
   btn.innerText = "Double or Nothing?";
   document.body.appendChild(btn);
