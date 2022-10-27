@@ -40,6 +40,7 @@ let isCard3Selected = false
 let isCard4Selected = false
 let isCard5Selected = false
 let roundNumber = 0
+let money = 10
 
 //let playerDeck, computerDeck, inRound, stop
 let dealerDeck, inRound, stop
@@ -255,6 +256,19 @@ function flipCards() {
 
 }
 
+/* 
+  -Start with ten
+  -Bet one each time deal
+  -If two pairs (min) win 1
+  -Three of a kind 2
+  -Straight 3
+  -Flush 4
+  -Full House 5
+  -Four of a kind 12
+  -Straight flush 25
+  -Royal flush 100
+*/
+
 /*
   if (isRoundWinner(playerCard, computerCard)) {
     text.innerText = "Win"
@@ -326,4 +340,7 @@ function isGameOver(deck) {
 
 function promptDoubleOrNothing() {
   text.innerText = "Would you like double or nothing?"
+  let btn = document.createElement("button");
+  btn.innerHTML = "Double or Nothing?";
+  document.body.appendChild(btn);
 }
