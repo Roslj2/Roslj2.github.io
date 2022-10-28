@@ -58,9 +58,7 @@ dealerCardSlot.addEventListener("click", () => {
 
   flipCards()
 
-  if (inRound) {
     flipCards()
-  }
 
 /*
   if (inRound) {
@@ -252,6 +250,10 @@ function flipCards() {
     roundNumber = 0
     promptDoubleOrNothing()
     inRound = false
+
+    dealerDeck.addEventListener("click", () => {
+      return promptDoubleOrNothing()
+    })  
 
   if (dealerDeck.numberOfCards < 5) {
     stop = true
