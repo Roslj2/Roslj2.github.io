@@ -252,7 +252,8 @@ function flipCards() {
     inRound = false
 
     dealerDeck.addEventListener("click", () => {
-      return promptDoubleOrNothing()
+      remove(promptDoubleOrNothing) 
+      //return promptDoubleOrNothing()
     })  
 
   if (dealerDeck.numberOfCards < 5) {
