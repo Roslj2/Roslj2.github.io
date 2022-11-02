@@ -354,11 +354,11 @@ function promptDoubleOrNothing() {
   //document.body.appendChild(btn);
 
   dealerCardSlot.addEventListener('click', () => {
-    if (button.style.display === 'none') {
-      button.style.display = 'block';
+    if (button.style.visibility === 'hidden') {
+      button.style.visibility = 'visible';
   
     } else {
-      button.style.visibility = 'none';
+      button.style.visibility = 'hidden';
       
     }
   });  
@@ -366,7 +366,7 @@ function promptDoubleOrNothing() {
 }
 
 if (roundNumber == 0) {
-  button.style.display = 'none'
+  button.style.visibility = 'hidden'
 }
 
 button.addEventListener("click", () => {
