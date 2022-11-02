@@ -246,11 +246,17 @@ function flipCards() {
 
 
   if (roundNumber == 2) {
+    inRound = false
     isWinningHand(card1, card2, card3, card4, card5)
     stop = true
-    roundNumber = 0
     promptDoubleOrNothing()
-    inRound = false
+
+    dealerCardSlot.addEventListener('click', () => {
+      if (DONbutton.style.visibility === 'visible') {
+        DONbutton.style.visibility = 'hidden';
+        roundNumber = 0
+  }
+});  
 
   if (dealerDeck.numberOfCards < 5) {
     stop = true
@@ -353,24 +359,16 @@ function promptDoubleOrNothing() {
   //button.innerText = "Double or Nothing?";
   //document.body.appendChild(btn);
 
-  dealerCardSlot.addEventListener('click', () => {
-    if (button.style.visibility === 'hidden') {
-      button.style.visibility = 'visible';
+  DONbutton.style.visibility = 'visible';
+
+  DONbutton.addEventListener("click", () => {
+    doubleOrNothing()
   
-    } else {
-      button.style.visibility = 'hidden';
-      
-    }
-  });  
+  })
 
 }
 
 if (roundNumber == 0) {
-  button.style.visibility = 'hidden'
+  DONbutton.style.visibility = 'hidden'
 }
-
-button.addEventListener("click", () => {
-  doubleOrNothing()
-
-})
 
