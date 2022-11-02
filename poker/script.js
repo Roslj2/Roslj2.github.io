@@ -58,8 +58,6 @@ dealerCardSlot.addEventListener("click", () => {
 
   flipCards()
 
-    flipCards()
-
 /*
   if (inRound) {
     cleanBeforeRound()
