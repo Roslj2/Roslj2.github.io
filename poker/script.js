@@ -139,7 +139,7 @@ cardSlot5.addEventListener("click", () => {
   }
 })
 
-const dealerCardSlot = document.getElementById('dealer');
+//const dealerCardSlot = document.getElementById('dealer');
 
 const button = document.getElementById('button');
 
@@ -255,11 +255,11 @@ function flipCards() {
     inRound = false
 
   dealerCardSlot.addEventListener('click', () => {
-  if (button.style.visibility === 'hidden') {
-    button.style.visibility = 'visible';
+  if (button.style.display === 'none') {
+    button.style.display = 'block';
 
   } else {
-    button.style.visibility = 'hidden';
+    button.style.visibility = 'none';
     
   }
 });
