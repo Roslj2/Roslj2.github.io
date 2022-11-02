@@ -139,6 +139,9 @@ cardSlot5.addEventListener("click", () => {
   }
 })
 
+const dealerCardSlot = document.getElementById('dealer');
+
+const button = document.getElementById('button');
 
 startGame()
 
@@ -251,10 +254,15 @@ function flipCards() {
     promptDoubleOrNothing()
     inRound = false
 
-    dealerDeck.addEventListener("click", () => {
-      remove(promptDoubleOrNothing) 
-      //return promptDoubleOrNothing()
-    })  
+  dealerCardSlot.addEventListener('click', () => {
+  if (button.style.visibility === 'hidden') {
+    button.style.visibility = 'visible';
+
+  } else {
+    button.style.visibility = 'hidden';
+    
+  }
+});
 
   if (dealerDeck.numberOfCards < 5) {
     stop = true
@@ -350,21 +358,22 @@ function doubleOrNothing() {
   return promptDoubleOrNothing
 }
 
-let btn = document.createElement("button");
+//let btn = document.createElement("button");
 
 function promptDoubleOrNothing() {
   //text.innerText = "Would you like double or nothing?"
   
-  btn.innerText = "Double or Nothing?";
-  document.body.appendChild(btn);
+  //button.innerText = "Double or Nothing?";
+  //document.body.appendChild(btn);
 
   if (roundNumber == 0) {
     return promptDoubleOrNothing
   }
 
-  btn.addEventListener("click", () => {
+  button.addEventListener("click", () => {
     doubleOrNothing()
 
   })
 
 }
+
