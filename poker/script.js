@@ -32,7 +32,7 @@ const cardSlot4 = document.querySelector(".card-slot-4")
 const cardSlot5 = document.querySelector(".card-slot-5")
 const text = document.querySelector(".text")
 
-let card1, card2, card3, card4, card5
+let dealerCard, card1, card2, card3, card4, card5
 
 let isCard1Selected = false
 let isCard2Selected = false
@@ -349,8 +349,16 @@ function isGameOver(deck) {
 
 //The function for Double or Nothing
 function doubleOrNothing() {
-  //inRound = true
-}
+  
+  dealerDeck = new Deck()
+  dealerDeck.shuffle()
+
+  dealerCardSlot.innerHTML = ""
+    dealerCard = dealerDeck.pop()
+    dealerCardSlot.appendChild(dealerCard.getHTML())
+    //dealerCardSlot.className = "card-slot-1"
+  }
+
 
 //let btn = document.createElement("button");
 
