@@ -254,15 +254,15 @@ function flipCards() {
     promptDoubleOrNothing()
     inRound = false
 
-  dealerCardSlot.addEventListener('click', () => {
-  if (button.style.display === 'none') {
-    button.style.display = 'block';
+  //dealerCardSlot.addEventListener('click', () => {
+  //if (button.style.display === 'none') {
+    //button.style.display = 'block';
 
-  } else {
-    button.style.visibility = 'none';
+  //} else {
+    //button.style.visibility = 'none';
     
-  }
-});
+  //}
+//});
 
   if (dealerDeck.numberOfCards < 5) {
     stop = true
