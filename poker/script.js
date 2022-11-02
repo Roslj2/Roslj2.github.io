@@ -350,6 +350,8 @@ function isGameOver(deck) {
 //The function for Double or Nothing
 function doubleOrNothing() {
   
+  text.innerText = "Pick the card that is higher than the dealer"
+
   dealerDeck = new Deck()
   dealerDeck.shuffle()
 
@@ -357,6 +359,28 @@ function doubleOrNothing() {
     dealerCard = dealerDeck.pop()
     dealerCardSlot.appendChild(dealerCard.getHTML())
     //dealerCardSlot.className = "card-slot-1"
+
+    cardSlot1.innerHTML = ""
+    card1 = dealerDeck.pop()
+    cardSlot1.className = 'computer-deck'
+    //cardSlot1.appendChild(card3.getHTML())
+
+    cardSlot2.innerHTML = ""
+    card2 = dealerDeck.pop()
+    cardSlot2.className = 'computer-deck'
+
+    cardSlot3.innerHTML = ""
+    card3 = dealerDeck.pop()
+    cardSlot3.className = 'computer-deck'
+
+    cardSlot4.innerHTML = ""
+    card4 = dealerDeck.pop()
+    cardSlot4.className = 'computer-deck'
+
+    cardSlot5.innerHTML = ""
+    card5 = dealerDeck.pop()
+    cardSlot5.className = 'computer-deck'
+
   }
 
 
