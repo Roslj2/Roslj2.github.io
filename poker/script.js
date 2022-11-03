@@ -88,6 +88,11 @@ cardSlot1.addEventListener("click", () => {
 
 // Set event listener for card 2
 cardSlot2.addEventListener("click", () => {
+  if (roundNumber == 3){
+    cardSlot2.className = 'selected-card'
+    revealAllCards();
+  }
+  
   if (inRound) {
     if (isCard2Selected == false){
       isCard2Selected = true
@@ -102,6 +107,11 @@ cardSlot2.addEventListener("click", () => {
 
 // Set event listener for card 3
 cardSlot3.addEventListener("click", () => {
+  if (roundNumber == 3){
+    cardSlot3.className = 'selected-card'
+    revealAllCards();
+  }
+  
   if (inRound) {
     if (isCard3Selected == false){
       isCard3Selected = true
@@ -116,6 +126,11 @@ cardSlot3.addEventListener("click", () => {
 
 // Set event listener for card 4
 cardSlot4.addEventListener("click", () => {
+  if (roundNumber == 3){
+    cardSlot4.className = 'selected-card'
+    revealAllCards();
+  }
+  
   if (inRound){
     if (isCard4Selected == false){
       isCard4Selected = true
@@ -130,6 +145,11 @@ cardSlot4.addEventListener("click", () => {
 
 // Set event listener for card 5
 cardSlot5.addEventListener("click", () => {
+  if (roundNumber == 3){
+    cardSlot5.className = 'selected-card'
+    revealAllCards();
+  }
+  
   if (inRound){
     if (isCard5Selected == false){
       isCard5Selected = true
