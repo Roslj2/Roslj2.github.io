@@ -408,7 +408,7 @@ function promptDoubleOrNothing() {
 
   DONbutton.addEventListener("click", () => {
     doubleOrNothing()
-  
+    roundNumber++;
   })
 
 }
