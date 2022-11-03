@@ -353,11 +353,11 @@ function isGameOver(deck) {
 }
 
 function revealAllCards() {
-  cardSlot1.appendChild(dealerCard.getHTML())
-  cardSlot2.appendChild(dealerCard.getHTML())
-  cardSlot3.appendChild(dealerCard.getHTML())
-  cardSlot4.appendChild(dealerCard.getHTML())
-  cardSlot5.appendChild(dealerCard.getHTML())
+  cardSlot1.appendChild(card1.getHTML())
+  cardSlot2.appendChild(card2.getHTML())
+  cardSlot3.appendChild(card3.getHTML())
+  cardSlot4.appendChild(card4.getHTML())
+  cardSlot5.appendChild(card5.getHTML())
 }
 
 //The function for Double or Nothing
