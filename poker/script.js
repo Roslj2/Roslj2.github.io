@@ -69,6 +69,11 @@ dealerCardSlot.addEventListener("click", () => {
 
 // Set event listener for card 1
 cardSlot1.addEventListener("click", () => {
+  if (roundNumber == 3){
+    cardSlot1.className = 'selected-card'
+    revealAllCards();
+  }
+  
   if (inRound) {
     if (isCard1Selected == false){
       isCard1Selected = true
@@ -345,6 +350,14 @@ function isRoundWinner(cardOne, cardTwo) {
 
 function isGameOver(deck) {
   //return deck.numberOfCards === 0
+}
+
+function revealAllCards() {
+  cardSlot1.appendChild(dealerCard.getHTML())
+  cardSlot2.appendChild(dealerCard.getHTML())
+  cardSlot3.appendChild(dealerCard.getHTML())
+  cardSlot4.appendChild(dealerCard.getHTML())
+  cardSlot5.appendChild(dealerCard.getHTML())
 }
 
 //The function for Double or Nothing
