@@ -41,6 +41,11 @@ let isCard4Selected = false
 let isCard5Selected = false
 let roundNumber = 0
 let money = 10
+let DONUserSelection
+//let DONCard1 = false
+//let DONCard2 = false
+//let DONCard3 = false
+//let DONCard4 = false
 
 //let playerDeck, computerDeck, inRound, stop
 let dealerDeck, inRound, stop
@@ -69,14 +74,8 @@ dealerCardSlot.addEventListener("click", () => {
 
 // Set event listener for card 1
 cardSlot1.addEventListener("click", () => {
-  if (roundNumber == 3){
-    cardSlot1.className = 'selected-card'
-    revealAllCards();
-  }
-  
   if (inRound) {
     if (isCard1Selected == false){
-      isCard1Selected = true
       cardSlot1.className = "selected-card"
     }
     else{
@@ -89,6 +88,8 @@ cardSlot1.addEventListener("click", () => {
 // Set event listener for card 2
 cardSlot2.addEventListener("click", () => {
   if (roundNumber == 3){
+    DONUserSelection = CARD_VALUE_MAP[card2.value]
+    //DONCard1 = true
     cardSlot2.className = 'selected-card'
     revealAllCards();
   }
@@ -108,6 +109,8 @@ cardSlot2.addEventListener("click", () => {
 // Set event listener for card 3
 cardSlot3.addEventListener("click", () => {
   if (roundNumber == 3){
+    DONUserSelection = CARD_VALUE_MAP[card3.value]
+    //DONCard2 = true
     cardSlot3.className = 'selected-card'
     revealAllCards();
   }
@@ -127,6 +130,8 @@ cardSlot3.addEventListener("click", () => {
 // Set event listener for card 4
 cardSlot4.addEventListener("click", () => {
   if (roundNumber == 3){
+    DONUserSelection = CARD_VALUE_MAP[card4.value]
+    //DONCard3 = true
     cardSlot4.className = 'selected-card'
     revealAllCards();
   }
@@ -146,6 +151,8 @@ cardSlot4.addEventListener("click", () => {
 // Set event listener for card 5
 cardSlot5.addEventListener("click", () => {
   if (roundNumber == 3){
+    DONUserSelection = CARD_VALUE_MAP[card5.value]
+    //DONCard4 = true
     cardSlot5.className = 'selected-card'
     revealAllCards();
   }
@@ -186,6 +193,10 @@ function startGame() {
 
   inRound = false
   stop = false
+
+if (roundNumber == 0) {
+  DONbutton.style.visibility = 'hidden'
+  }
 
   cleanBeforeRound()
 }
@@ -274,7 +285,7 @@ function flipCards() {
     inRound = false
     isWinningHand(card1, card2, card3, card4, card5)
     stop = true
-    promptDoubleOrNothing()
+    promptDoubleOrNothing();
 
     dealerCardSlot.addEventListener('click', () => {
       if (DONbutton.style.visibility === 'visible') {
@@ -282,6 +293,17 @@ function flipCards() {
         roundNumber = 0
   }
 });  
+
+    /* if (roundNumber == 3) {
+      dealerCardSlot.addEventListener('click', () => {
+        if (stop == true) {
+          startGame()
+          return
+        }else {
+
+        }
+      });
+    } */
 
   if (dealerDeck.numberOfCards < 5) {
     stop = true
@@ -373,11 +395,16 @@ function isGameOver(deck) {
 }
 
 function revealAllCards() {
-  cardSlot1.appendChild(card1.getHTML())
   cardSlot2.appendChild(card2.getHTML())
   cardSlot3.appendChild(card3.getHTML())
   cardSlot4.appendChild(card4.getHTML())
   cardSlot5.appendChild(card5.getHTML())
+
+  if (DONUserSelection > CARD_VALUE_MAP[card1.value]){
+    text.innerText = "YOU WON DOUBLE OR NOTHING!"
+  } else {
+    text.innerText = "You lost Dounle or Nothing!"
+  }
 
   roundNumber = 0
 }
@@ -390,15 +417,9 @@ function doubleOrNothing() {
   dealerDeck = new Deck()
   dealerDeck.shuffle()
 
-  dealerCardSlot.innerHTML = ""
-    dealerCard = dealerDeck.pop()
-    dealerCardSlot.appendChild(dealerCard.getHTML())
-    //dealerCardSlot.className = "card-slot-1"
-
     cardSlot1.innerHTML = ""
     card1 = dealerDeck.pop()
-    cardSlot1.className = 'computer-deck'
-    //cardSlot1.appendChild(card3.getHTML())
+    cardSlot1.appendChild(card1.getHTML())
 
     cardSlot2.innerHTML = ""
     card2 = dealerDeck.pop()
@@ -416,6 +437,13 @@ function doubleOrNothing() {
     card5 = dealerDeck.pop()
     cardSlot5.className = 'computer-deck'
 
+/*
+    if (card1.value > DONCard1.value && card1.value > DONCard2.value && card1.value > DONCard2.value && card1.value > DONCard3.value && card1.value > DONCard4.value) {
+      text.innerText = "You loose"
+    } else{
+      text.innerText = "You win! Double or Nothing?"
+    }
+*/
   }
 
 
@@ -431,11 +459,9 @@ function promptDoubleOrNothing() {
   DONbutton.addEventListener("click", () => {
     doubleOrNothing()
     roundNumber++;
-  })
+  });
 
 }
 
-if (roundNumber == 0) {
-  DONbutton.style.visibility = 'hidden'
-}
+
 
