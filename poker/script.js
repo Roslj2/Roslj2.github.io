@@ -378,6 +378,8 @@ function revealAllCards() {
   cardSlot3.appendChild(card3.getHTML())
   cardSlot4.appendChild(card4.getHTML())
   cardSlot5.appendChild(card5.getHTML())
+
+  roundNumber = 0
 }
 
 //The function for Double or Nothing
