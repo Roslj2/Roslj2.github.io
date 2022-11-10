@@ -288,9 +288,11 @@ function flipCards() {
     promptDoubleOrNothing();
 
     dealerCardSlot.addEventListener('click', () => {
-      if (DONbutton.style.visibility === 'visible') {
+      if (DONbutton.style.visibility == 'visible') {
         DONbutton.style.visibility = 'hidden';
         roundNumber = 0
+    } else {
+      DONbutton.style.visibility = 'visible';
   }
 });  
 
