@@ -403,11 +403,9 @@ function revealAllCards() {
   if (DONUserSelection > CARD_VALUE_MAP[card1.value]){
     text.innerText = "YOU WON DOUBLE OR NOTHING!"
     roundNumber = 0;
-    startGame();
   } else {
     text.innerText = "You lost Dounle or Nothing!"
     roundNumber = 0;
-    startGame();
   }
 
   roundNumber = 0
