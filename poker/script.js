@@ -285,7 +285,7 @@ function flipCards() {
     inRound = false
     isWinningHand(card1, card2, card3, card4, card5)
     stop = true
-    promptDoubleOrNothin();
+    promptDoubleOrNothing();
 
     dealerCardSlot.addEventListener('click', () => {
       if (DONbutton.style.visibility === 'visible') {
