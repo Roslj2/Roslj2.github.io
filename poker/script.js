@@ -409,7 +409,8 @@ function revealAllCards() {
   }
 
   roundNumber = 0
-}
+// } here
+
 
 //The function for Double or Nothing
 function doubleOrNothing() {
