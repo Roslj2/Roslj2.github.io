@@ -285,7 +285,7 @@ function flipCards() {
     inRound = false
     isWinningHand(card1, card2, card3, card4, card5)
     stop = true
-    promptDoubleOrNothing();
+    promptDoubleOrNothin();
 
     dealerCardSlot.addEventListener('click', () => {
       if (DONbutton.style.visibility === 'visible') {
@@ -407,9 +407,8 @@ function revealAllCards() {
     text.innerText = "You lost Dounle or Nothing!"
     roundNumber = 0;
   }
-
   roundNumber = 0
-// } here
+}
 
 
 //The function for Double or Nothing
