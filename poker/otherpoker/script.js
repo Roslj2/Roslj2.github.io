@@ -292,7 +292,7 @@ function isWinningHand(card1, card2, card3, card4, card5) {
     for (let secondIndex=firstIndex+1; secondIndex < currentHand.length; secondIndex++) {
       if (currentHand[firstIndex] == currentHand[secondIndex]) {
         pairValue = currentHand[firstIndex]
-        text.innerText = "You have a pair! Double or nothing?"
+        text.innerText = "You have a pair! Double or nothing? (Left = yes; right = no)"
         winningHandBoolean = true
       }
     }
@@ -300,7 +300,7 @@ function isWinningHand(card1, card2, card3, card4, card5) {
 
   // Check for a flush (matching suits)
   if (card1.suit == card2.suit && card1.suit == card3.suit && card1.suit == card3.suit && card1.suit == card4.suit && card1.suit == card5.suit) {
-    text.innerText = "You have a flush! Double or nothing?"
+    text.innerText = "You have a flush! Double or nothing? (Left = yes; right = no)"
     winningHandBoolean = true
   }
 }
@@ -322,9 +322,9 @@ function isGameOver(deck) {
 function promptForDoubleOrNothing() {
   // Display the double or nothing buttons (yes/no)
   DONButtonYes.style.visibility = 'visible'
-  DONButtonYes.innerText = "Yes"
+  //DONButtonYes.innerText = "Yes"
   DONButtonNo.style.visibility = 'visible'
-  DONButtonYes.innerText = "No"
+  //DONButtonYes.innerText = "No"
   //text.innerText = "Double or nothing?"
 }
 
