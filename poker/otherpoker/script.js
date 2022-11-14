@@ -200,6 +200,7 @@ function startGame() {
 }
 
 function cleanBeforeRound() {
+
   inRound = false
   winningHandBoolean = false
 
@@ -222,6 +223,9 @@ function cleanBeforeRound() {
   isCard3Selected = false
   isCard4Selected = false
   isCard5Selected = false
+
+  DONButtonYes.style.visibility = 'hidden'
+  DONButtonNo.style.visibility = 'hidden'
 
   updateDeckCount()
 }
@@ -258,16 +262,25 @@ function flipCards() {
   // If it's round 2, meaning the user has been dealt cards twice, check if it's a winning hand.
   if (roundNumber == 2) {
     isWinningHand(card1, card2, card3, card4, card5)
+
+    // If there's a winning hand, prompt for double or nothing
+    if (winningHandBoolean == true) {
+      promptForDoubleOrNothing()
+    } else {
+      text.innerText = "Not a winner. Click deck to start a new round."
+      roundNumber = 0
+    }
+
   }
 
-  // If there's a winning hand, prompt for double or nothing
-  if (winningHandBoolean == true) {
-    promptForDoubleOrNothing()
-  }
 
   //text.innerText = ""
   updateDeckCount()
-  roundNumber++
+
+  if (roundNumber != 0) {
+    roundNumber++
+  }
+  //roundNumber++
 
   if (dealerDeck.numberOfCards < 5) {
     stop = true
