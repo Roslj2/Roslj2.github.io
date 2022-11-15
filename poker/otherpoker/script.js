@@ -297,19 +297,45 @@ function isWinningHand(card1, card2, card3, card4, card5) {
   // Sort the array numerically
   currentHand.sort((a,b)=>a-b)
 
+  // Check for a straight
+  if ((currentHand[0] == currentHand[1]-1) && (currentHand[1] == currentHand[2]-1) && (currentHand[2] == currentHand[3]-1) && (currentHand[3] == currentHand[4]-1)) {
+    text.innerText = "You have a STRAIGHT! Double or nothing? (Left = yes; right = no)"
+    winningHandBoolean = true
+  }
+
   let pairValue
 
   // Check for 1 pair. If found, record the pair value.
   for (let firstIndex=0; firstIndex < currentHand.length; firstIndex++)
   {
-    for (let secondIndex=firstIndex+1; secondIndex < currentHand.length; secondIndex++) {
+    for (let secondIndex=firstIndex+1; secondIndex <= currentHand.length; secondIndex++) {
       if (currentHand[firstIndex] == currentHand[secondIndex]) {
         pairValue = currentHand[firstIndex]
         text.innerText = "You have a pair! Double or nothing? (Left = yes; right = no)"
         winningHandBoolean = true
+
+        // Check for 3 of a kind
+        for (let thirdIndex=secondIndex+1; thirdIndex <= currentHand.length; thirdIndex++) {
+          if (currentHand[secondIndex] == currentHand[thirdIndex]) {
+            text.innerText = "You have THREE of a kind! Double or nothing? (Left = yes; right = no)"
+            winningHandBoolean = true
+
+            // Check for 4 of a kind
+            for (let fourthIndex=thirdIndex+1; fourthIndex <= currentHand.length; fourthIndex++) {
+            if (currentHand[thirdIndex] == currentHand[fourthIndex]) {
+              text.innerText = "You have FOUR of a kind! Double or nothing? (Left = yes; right = no)"
+              winningHandBoolean = true
+              return
+            } else {
+              // It's just a 3 of a kind
+              return
+            }
+          }
+        }
       }
     }
   }
+}
 
   // Check for a flush (matching suits)
   if (card1.suit == card2.suit && card1.suit == card3.suit && card1.suit == card3.suit && card1.suit == card4.suit && card1.suit == card5.suit) {
@@ -333,12 +359,13 @@ function isGameOver(deck) {
 }
 
 function promptForDoubleOrNothing() {
+
   // Display the double or nothing buttons (yes/no)
   DONButtonYes.style.visibility = 'visible'
   //DONButtonYes.innerText = "Yes"
+
   DONButtonNo.style.visibility = 'visible'
   //DONButtonYes.innerText = "No"
-  //text.innerText = "Double or nothing?"
 }
 
 function doDoubleOrNothing() {
