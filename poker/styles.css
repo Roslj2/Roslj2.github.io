@@ -150,13 +150,12 @@ height: 30px;
   position: relative;
   height: 100%;
   width: 100%;
-  border: 5px solid lightgrey;
+  border: 2px solid yellow;
   border-radius: .5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 4rem;
-  background-color: lightgrey;
 }
 
 .card.red {
