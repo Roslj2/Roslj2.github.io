@@ -110,9 +110,9 @@ height: 30px;
   width: 100px;
   font-weight: 400;
   text-align: center;
-}:hover {
+}/*:hover {
       background-color: #f4f6f9;
-  }
+  }*/
 
 .computer-deck {
   background-color: green;
