@@ -1,0 +1,39 @@
+.hr {
+    color: rgb(65, 0, 65);
+}
+
+.red {
+    color: rgb(153, 0, 0);
+}
+
+.yellow {
+    color: rgb(255, 225, 0);
+}
+
+.green {
+    color: rgb(0, 104, 24);
+}
+
+.blue {
+    color: rgb(58, 88, 255);
+}
+
+.team {
+    color: rgb(84, 0, 84);
+}
+
+.lunch {
+    color: rgb(84, 0, 84);
+}
+
+.ua {
+    color: purple;
+}
+
+body {
+    background-color: rgb(155, 198, 255);
+  }
+
+td {
+    background-color: white;
+}
