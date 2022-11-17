@@ -16,14 +16,6 @@ const CARD_VALUE_MAP = {
   A: 14
 }
 
-/*
-const computerCardSlot = document.querySelector(".computer-card-slot")
-const playerCardSlot = document.querySelector(".player-card-slot")
-const computerDeckElement = document.querySelector(".computer-deck")
-const playerDeckElement = document.querySelector(".player-deck")
-const text = document.querySelector(".text")
-*/
-
 const dealerCardSlot = document.querySelector(".dealer-deck")
 const cardSlot1 = document.querySelector(".card-slot-1")
 const cardSlot2 = document.querySelector(".card-slot-2")
@@ -49,23 +41,16 @@ let roundNumber = 0 // 0 = new game; 1 = first hand; 2 = final hand; 3 = double 
 //document.addEventListener("click", () => {
 dealerCardSlot.addEventListener("click", () => {
 
-//  if (stop) {
-  if (roundNumber == 0) {
-    startGame()
-    return
-  }
+  if (roundNumber != 3) {
+    //  if (stop) {
+    if (roundNumber == 0) {
+      startGame()
+      return
+    }
 
-//  if (roundNumber == 1) {
-  flipCards()
-//}
-
-/*
-  if (inRound) {
-    cleanBeforeRound()
-  } else {
     flipCards()
   }
-*/
+
 })
 
 // Set event listener for card 1
@@ -201,6 +186,9 @@ function startGame() {
 
 function cleanBeforeRound() {
 
+  DONButtonYes.style.visibility = 'hidden'
+  DONButtonNo.style.visibility = 'hidden'
+
   inRound = false
   winningHandBoolean = false
 
@@ -223,9 +211,6 @@ function cleanBeforeRound() {
   isCard3Selected = false
   isCard4Selected = false
   isCard5Selected = false
-
-  DONButtonYes.style.visibility = 'hidden'
-  DONButtonNo.style.visibility = 'hidden'
 
   updateDeckCount()
 }
@@ -369,6 +354,9 @@ function promptForDoubleOrNothing() {
 }
 
 function doDoubleOrNothing() {
+
+  DONButtonYes.style.visibility = 'hidden'
+  DONButtonNo.style.visibility = 'hidden'
 
   // Get a fresh deck and reset all selections
   dealerDeck = new Deck()
