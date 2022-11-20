@@ -16,14 +16,6 @@ const CARD_VALUE_MAP = {
   A: 14
 }
 
-/*
-const computerCardSlot = document.querySelector(".computer-card-slot")
-const playerCardSlot = document.querySelector(".player-card-slot")
-const computerDeckElement = document.querySelector(".computer-deck")
-const playerDeckElement = document.querySelector(".player-deck")
-const text = document.querySelector(".text")
-*/
-
 const dealerCardSlot = document.querySelector(".dealer-deck")
 const cardSlot1 = document.querySelector(".card-slot-1")
 const cardSlot2 = document.querySelector(".card-slot-2")
@@ -41,6 +33,8 @@ let isCard2Selected = false
 let isCard3Selected = false
 let isCard4Selected = false
 let isCard5Selected = false
+let totalMoney = 0
+let roundMoney = 0
 
 //let playerDeck, computerDeck, inRound, stop
 let dealerDeck, inRound, stop, winningHandBoolean, doubleOrNothingSelection
@@ -49,23 +43,16 @@ let roundNumber = 0 // 0 = new game; 1 = first hand; 2 = final hand; 3 = double 
 //document.addEventListener("click", () => {
 dealerCardSlot.addEventListener("click", () => {
 
-//  if (stop) {
-  if (roundNumber == 0) {
-    startGame()
-    return
-  }
+  if (roundNumber != 3) {
+    //  if (stop) {
+    if (roundNumber == 0) {
+      startGame()
+      return
+    }
 
-//  if (roundNumber == 1) {
-  flipCards()
-//}
-
-/*
-  if (inRound) {
-    cleanBeforeRound()
-  } else {
     flipCards()
   }
-*/
+
 })
 
 // Set event listener for card 1
@@ -201,6 +188,9 @@ function startGame() {
 
 function cleanBeforeRound() {
 
+  DONButtonYes.style.visibility = 'hidden'
+  DONButtonNo.style.visibility = 'hidden'
+
   inRound = false
   winningHandBoolean = false
 
@@ -223,9 +213,6 @@ function cleanBeforeRound() {
   isCard3Selected = false
   isCard4Selected = false
   isCard5Selected = false
-
-  DONButtonYes.style.visibility = 'hidden'
-  DONButtonNo.style.visibility = 'hidden'
 
   updateDeckCount()
 }
@@ -297,23 +284,50 @@ function isWinningHand(card1, card2, card3, card4, card5) {
   // Sort the array numerically
   currentHand.sort((a,b)=>a-b)
 
+  // Check for a straight
+  if ((currentHand[0] == currentHand[1]-1) && (currentHand[1] == currentHand[2]-1) && (currentHand[2] == currentHand[3]-1) && (currentHand[3] == currentHand[4]-1)) {
+    text.innerText = "You have a STRAIGHT! Double or nothing?"
+    winningHandBoolean = true
+  }
+
   let pairValue
 
   // Check for 1 pair. If found, record the pair value.
   for (let firstIndex=0; firstIndex < currentHand.length; firstIndex++)
   {
-    for (let secondIndex=firstIndex+1; secondIndex < currentHand.length; secondIndex++) {
+    for (let secondIndex=firstIndex+1; secondIndex <= currentHand.length; secondIndex++) {
       if (currentHand[firstIndex] == currentHand[secondIndex]) {
         pairValue = currentHand[firstIndex]
-        text.innerText = "You have a pair! Double or nothing? (Left = yes; right = no)"
-        winningHandBoolean = true
+        //if (pairValue >= 11) {
+          text.innerText = "You have a pair! Double or nothing?"
+          winningHandBoolean = true
+        //}
+        // Check for 3 of a kind
+        for (let thirdIndex=secondIndex+1; thirdIndex <= currentHand.length; thirdIndex++) {
+          if (currentHand[secondIndex] == currentHand[thirdIndex]) {
+            text.innerText = "You have THREE of a kind! Double or nothing?"
+            winningHandBoolean = true
+
+            // Check for 4 of a kind
+            for (let fourthIndex=thirdIndex+1; fourthIndex <= currentHand.length; fourthIndex++) {
+            if (currentHand[thirdIndex] == currentHand[fourthIndex]) {
+              text.innerText = "You have FOUR of a kind! Double or nothing?"
+              winningHandBoolean = true
+              return
+            } else {
+              // It's just a 3 of a kind
+              return
+            }
+          }
+        }
       }
     }
   }
+}
 
   // Check for a flush (matching suits)
   if (card1.suit == card2.suit && card1.suit == card3.suit && card1.suit == card3.suit && card1.suit == card4.suit && card1.suit == card5.suit) {
-    text.innerText = "You have a flush! Double or nothing? (Left = yes; right = no)"
+    text.innerText = "You have a flush! Double or nothing?"
     winningHandBoolean = true
   }
 }
@@ -333,15 +347,19 @@ function isGameOver(deck) {
 }
 
 function promptForDoubleOrNothing() {
+
   // Display the double or nothing buttons (yes/no)
   DONButtonYes.style.visibility = 'visible'
   //DONButtonYes.innerText = "Yes"
+
   DONButtonNo.style.visibility = 'visible'
   //DONButtonYes.innerText = "No"
-  //text.innerText = "Double or nothing?"
 }
 
 function doDoubleOrNothing() {
+
+  DONButtonYes.style.visibility = 'hidden'
+  DONButtonNo.style.visibility = 'hidden'
 
   // Get a fresh deck and reset all selections
   dealerDeck = new Deck()
@@ -387,6 +405,15 @@ function revealAllCards() {
   cardSlot4.appendChild(card4.getHTML())
   cardSlot5.appendChild(card5.getHTML())
 }
+
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+  // true for mobile device
+
+}else{
+  // false for not mobile device
+  document.write("not mobile device");
+}
+
 
 
 
