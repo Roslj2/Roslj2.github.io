@@ -298,10 +298,10 @@ function isWinningHand(card1, card2, card3, card4, card5) {
     for (let secondIndex=firstIndex+1; secondIndex <= currentHand.length; secondIndex++) {
       if (currentHand[firstIndex] == currentHand[secondIndex]) {
         pairValue = currentHand[firstIndex]
-        //if (pairValue >= 11) {
+        if (pairValue >= 11) {
           text.innerText = "You have a pair! Double or nothing?"
           winningHandBoolean = true
-        //}
+        }
         // Check for 3 of a kind
         for (let thirdIndex=secondIndex+1; thirdIndex <= currentHand.length; thirdIndex++) {
           if (currentHand[secondIndex] == currentHand[thirdIndex]) {
