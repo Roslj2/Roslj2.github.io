@@ -34,7 +34,7 @@ let isCard2Selected = false
 let isCard3Selected = false
 let isCard4Selected = false
 let isCard5Selected = false
-let totalMoney = 100
+let totalMoney = 101
 let roundMoney = 0
 
 // Set variables for winning hand values.
