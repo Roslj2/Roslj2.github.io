@@ -395,8 +395,7 @@ function doDoubleOrNothing() {
 function isDoubleOrNothingWinner() {
   if (doubleOrNothingSelection > CARD_VALUE_MAP[card1.value]) {
     text.innerText = "YOU WON DOUBLE OR NOTHING!"
-    setTimeout(codingCourse, 1000);
-    promptForDoubleOrNothing()
+    setTimeout(promptForDoubleOrNothing, 1000);
   } else {
     text.innerText = "YOU LOST DOUBLE OR NOTHING!"
   }
