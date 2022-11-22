@@ -352,10 +352,9 @@ function promptForDoubleOrNothing() {
 
   // Display the double or nothing buttons (yes/no)
   DONButtonYes.style.visibility = 'visible'
-  //DONButtonYes.innerText = "Yes"
-
   DONButtonNo.style.visibility = 'visible'
-  //DONButtonYes.innerText = "No"
+
+
 }
 
 function doDoubleOrNothing() {
@@ -397,8 +396,8 @@ function doDoubleOrNothing() {
 function isDoubleOrNothingWinner() {
   if (doubleOrNothingSelection > CARD_VALUE_MAP[card1.value]) {
     text.innerText = "YOU WON DOUBLE OR NOTHING! Double or Nothing again?"
-    promptForDoubleOrNothing()
     roundNumber = 3
+    promptForDoubleOrNothing()
   } else {
     text.innerText = "YOU LOST DOUBLE OR NOTHING!"
   }
