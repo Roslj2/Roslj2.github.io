@@ -281,8 +281,6 @@ function flipCards() {
 
   }
 
-
-  //text.innerText = ""
   updateDeckCount()
 
   if (roundNumber != 0) {
@@ -311,6 +309,14 @@ function isWinningHand(card1, card2, card3, card4, card5) {
     winningHandBoolean = true
   }
 
+  // Check for a full house
+  if ( ((currentHand[0] == currentHand[1]) && (currentHand[0] == currentHand[2]) && (currentHand[3] == currentHand[4]))
+    || ((currentHand[0] == currentHand[1]) && (currentHand[2] == currentHand[3]) && (currentHand[2] == currentHand[4])) ) {
+    text.innerText = "You have a FULL HOUSE! Double or nothing?"
+    winningHandBoolean = true
+    roundMoney = roundMoney + fullHouseValue
+  }
+
   let thePair
 
   // Check for 1 pair. If found, record the pair value.
@@ -330,24 +336,24 @@ function isWinningHand(card1, card2, card3, card4, card5) {
 
             // Check for 4 of a kind
             for (let fourthIndex=thirdIndex+1; fourthIndex <= currentHand.length; fourthIndex++) {
-            if (currentHand[thirdIndex] == currentHand[fourthIndex]) {
-              text.innerText = "You have FOUR of a kind! Double or nothing?"
-              winningHandBoolean = true
-              roundMoney = roundMoney + fourOfAKindValue
-              return
-            } else {
-              // It's just a 3 of a kind
-              text.innerText = "You have THREE of a kind! Double or nothing?"
-              winningHandBoolean = true
-              roundMoney = roundMoney + threeOfAKindValue
-              return
+              if (currentHand[thirdIndex] == currentHand[fourthIndex]) {
+                text.innerText = "You have FOUR of a kind! Double or nothing?"
+                winningHandBoolean = true
+                roundMoney = roundMoney + fourOfAKindValue
+                return
+              } else {
+                // It's just a 3 of a kind
+                text.innerText = "You have THREE of a kind! Double or nothing?"
+                winningHandBoolean = true
+                roundMoney = roundMoney + threeOfAKindValue
+                return
+              }
             }
           }
         }
       }
     }
   }
-}
 
   // Check for a flush (matching suits)
   if (card1.suit == card2.suit && card1.suit == card3.suit && card1.suit == card3.suit && card1.suit == card4.suit && card1.suit == card5.suit) {
