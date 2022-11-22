@@ -307,6 +307,7 @@ function isWinningHand(card1, card2, card3, card4, card5) {
   if ((currentHand[0] == currentHand[1]-1) && (currentHand[1] == currentHand[2]-1) && (currentHand[2] == currentHand[3]-1) && (currentHand[3] == currentHand[4]-1)) {
     text.innerText = "You have a STRAIGHT! Double or nothing?"
     winningHandBoolean = true
+    roundMoney = roundMoney + straightValue
   }
 
   // Check for a full house
