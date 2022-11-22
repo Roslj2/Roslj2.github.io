@@ -33,7 +33,7 @@ let isCard2Selected = false
 let isCard3Selected = false
 let isCard4Selected = false
 let isCard5Selected = false
-let totalMoney = 0
+let totalMoney = 10
 let roundMoney = 0
 
 //let playerDeck, computerDeck, inRound, stop
@@ -256,6 +256,7 @@ function flipCards() {
     } else {
       text.innerText = "Not a winner. Click deck to start a new round."
       roundNumber = 0
+      totalMoney--
     }
 
   }
@@ -288,6 +289,7 @@ function isWinningHand(card1, card2, card3, card4, card5) {
   if ((currentHand[0] == currentHand[1]-1) && (currentHand[1] == currentHand[2]-1) && (currentHand[2] == currentHand[3]-1) && (currentHand[3] == currentHand[4]-1)) {
     text.innerText = "You have a STRAIGHT! Double or nothing?"
     winningHandBoolean = true
+
   }
 
   let pairValue
@@ -393,6 +395,8 @@ function doDoubleOrNothing() {
 function isDoubleOrNothingWinner() {
   if (doubleOrNothingSelection > CARD_VALUE_MAP[card1.value]) {
     text.innerText = "YOU WON DOUBLE OR NOTHING!"
+    setTimeout(codingCourse, 1000);
+    promptForDoubleOrNothing()
   } else {
     text.innerText = "YOU LOST DOUBLE OR NOTHING!"
   }
