@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: lightsteelblue;
+  background-color: salmon;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(6, 4rem);
