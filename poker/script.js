@@ -362,7 +362,6 @@ function doDoubleOrNothing() {
   DONButtonYes.style.visibility = 'hidden'
   DONButtonNo.style.visibility = 'hidden'
 
-  roundNumber = 3
 
   // Get a fresh deck and reset all selections
   dealerDeck = new Deck()
