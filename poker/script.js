@@ -430,10 +430,11 @@ function isDoubleOrNothingWinner() {
     roundMoney = roundMoney * 2
     totalMoney = totalMoney + roundMoney
     updateMoneyText()
+    
     promptForDoubleOrNothing()
 
   } else {
-    text.innerText = "YOU LOST DOUBLE OR NOTHING!"
+    text.innerText = "YOU LOST DOUBLE OR NOTHING! Click deck to start new round."
     updateMoneyText()
   }
   roundNumber = 0
