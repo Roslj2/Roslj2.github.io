@@ -25,6 +25,7 @@ const cardSlot5 = document.querySelector(".card-slot-5")
 const text = document.querySelector(".text")
 const DONButtonYes = document.querySelector(".DONButtonYes") // This is the double or nothing button
 const DONButtonNo = document.querySelector(".DONButtonNo") // This is the double or nothing button
+const moneyText = document.querySelector(".money-text")
 
 let card1, card2, card3, card4, card5
 
@@ -33,8 +34,20 @@ let isCard2Selected = false
 let isCard3Selected = false
 let isCard4Selected = false
 let isCard5Selected = false
-let totalMoney = 10
+let totalMoney = 101
 let roundMoney = 0
+
+// Set variables for winning hand values.
+let pairValue = 1
+let twoPairWinValue = 2
+let threeOfAKindValue = 3
+let fourOfAKindValue = 10
+let flushValue = 4
+let fullHouseValue = 6
+let straightValue = 5
+let straightFlushValue = 25
+let straightRoyalFlushValue = 50
+
 
 //let playerDeck, computerDeck, inRound, stop
 let dealerDeck, inRound, stop, winningHandBoolean, doubleOrNothingSelection
@@ -161,6 +174,8 @@ DONButtonNo.addEventListener("click", () => {
       stop = true
       DONButtonYes.style.visibility = 'hidden'
       DONButtonNo.style.visibility = 'hidden'
+      totalMoney = totalMoney + roundMoney
+      updateMoneyText()
       startGame()
     }
 })
@@ -172,6 +187,10 @@ function startGame() {
 
   text.innerText = "Inside start game"
   roundNumber = 1
+
+  totalMoney = totalMoney - 1
+  roundMoney = 0
+  updateMoneyText()
 
   const deck = new Deck()
   deck.shuffle()
@@ -253,16 +272,15 @@ function flipCards() {
     // If there's a winning hand, prompt for double or nothing
     if (winningHandBoolean == true) {
       promptForDoubleOrNothing()
+      updateMoneyText()
     } else {
       text.innerText = "Not a winner. Click deck to start a new round."
       roundNumber = 0
-      totalMoney--
+      roundMoney = 0
     }
 
   }
 
-
-  //text.innerText = ""
   updateDeckCount()
 
   if (roundNumber != 0) {
@@ -289,47 +307,59 @@ function isWinningHand(card1, card2, card3, card4, card5) {
   if ((currentHand[0] == currentHand[1]-1) && (currentHand[1] == currentHand[2]-1) && (currentHand[2] == currentHand[3]-1) && (currentHand[3] == currentHand[4]-1)) {
     text.innerText = "You have a STRAIGHT! Double or nothing?"
     winningHandBoolean = true
-
+    roundMoney = roundMoney + straightValue
   }
 
-  let pairValue
+  // Check for a full house
+  if ( ((currentHand[0] == currentHand[1]) && (currentHand[0] == currentHand[2]) && (currentHand[3] == currentHand[4]))
+    || ((currentHand[0] == currentHand[1]) && (currentHand[2] == currentHand[3]) && (currentHand[2] == currentHand[4])) ) {
+    text.innerText = "You have a FULL HOUSE! Double or nothing?"
+    winningHandBoolean = true
+    roundMoney = roundMoney + fullHouseValue
+  }
+
+  let thePair
 
   // Check for 1 pair. If found, record the pair value.
   for (let firstIndex=0; firstIndex < currentHand.length; firstIndex++)
   {
     for (let secondIndex=firstIndex+1; secondIndex <= currentHand.length; secondIndex++) {
       if (currentHand[firstIndex] == currentHand[secondIndex]) {
-        pairValue = currentHand[firstIndex]
-        //if (pairValue >= 11) {
+        thePair = currentHand[firstIndex]
+        //if (thePair >= 11) {
           text.innerText = "You have a pair! Double or nothing?"
           winningHandBoolean = true
+          roundMoney = roundMoney + pairValue
         //}
         // Check for 3 of a kind
         for (let thirdIndex=secondIndex+1; thirdIndex <= currentHand.length; thirdIndex++) {
           if (currentHand[secondIndex] == currentHand[thirdIndex]) {
-            text.innerText = "You have THREE of a kind! Double or nothing?"
-            winningHandBoolean = true
 
             // Check for 4 of a kind
             for (let fourthIndex=thirdIndex+1; fourthIndex <= currentHand.length; fourthIndex++) {
-            if (currentHand[thirdIndex] == currentHand[fourthIndex]) {
-              text.innerText = "You have FOUR of a kind! Double or nothing?"
-              winningHandBoolean = true
-              return
-            } else {
-              // It's just a 3 of a kind
-              return
+              if (currentHand[thirdIndex] == currentHand[fourthIndex]) {
+                text.innerText = "You have FOUR of a kind! Double or nothing?"
+                winningHandBoolean = true
+                roundMoney = roundMoney + fourOfAKindValue
+                return
+              } else {
+                // It's just a 3 of a kind
+                text.innerText = "You have THREE of a kind! Double or nothing?"
+                winningHandBoolean = true
+                roundMoney = roundMoney + threeOfAKindValue
+                return
+              }
             }
           }
         }
       }
     }
   }
-}
 
   // Check for a flush (matching suits)
   if (card1.suit == card2.suit && card1.suit == card3.suit && card1.suit == card3.suit && card1.suit == card4.suit && card1.suit == card5.suit) {
     text.innerText = "You have a flush! Double or nothing?"
+    roundMoney = roundMoney + flushValue
     winningHandBoolean = true
   }
 }
@@ -352,16 +382,16 @@ function promptForDoubleOrNothing() {
 
   // Display the double or nothing buttons (yes/no)
   DONButtonYes.style.visibility = 'visible'
+  //DONButtonYes.innerText = "Yes"
+
   DONButtonNo.style.visibility = 'visible'
-
-
+  //DONButtonYes.innerText = "No"
 }
 
 function doDoubleOrNothing() {
 
   DONButtonYes.style.visibility = 'hidden'
   DONButtonNo.style.visibility = 'hidden'
-
 
   // Get a fresh deck and reset all selections
   dealerDeck = new Deck()
@@ -395,10 +425,16 @@ function doDoubleOrNothing() {
 function isDoubleOrNothingWinner() {
   if (doubleOrNothingSelection > CARD_VALUE_MAP[card1.value]) {
     text.innerText = "YOU WON DOUBLE OR NOTHING! Double or Nothing again?"
-    roundNumber = 3
+
+    // Double the winnings for this round, then add this round's winnings to the total money.
+    roundMoney = roundMoney * 2
+    totalMoney = totalMoney + roundMoney
+    updateMoneyText()
     promptForDoubleOrNothing()
+
   } else {
     text.innerText = "YOU LOST DOUBLE OR NOTHING!"
+    updateMoneyText()
   }
   roundNumber = 0
 }
@@ -417,3 +453,13 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
   // false for not mobile device
   document.write("not mobile device");
 }
+
+function updateMoneyText() {
+    moneyText.innerText = "Total: " + totalMoney + ". This round: " + roundMoney
+}
+
+
+
+
+
+
