@@ -34,7 +34,7 @@ let isCard2Selected = false
 let isCard3Selected = false
 let isCard4Selected = false
 let isCard5Selected = false
-let totalMoney = 101
+let totalMoney = 10
 let roundMoney = 0
 
 // Set variables for winning hand values.
@@ -61,6 +61,10 @@ dealerCardSlot.addEventListener("click", () => {
     if (roundNumber == 0) {
       startGame()
       return
+    }
+    else if (roundNumber == 1) {
+      totalMoney = totalMoney - 1
+      updateMoneyText()
     }
 
     flipCards()
@@ -188,7 +192,7 @@ function startGame() {
   text.innerText = "Inside start game"
   roundNumber = 1
 
-  totalMoney = totalMoney - 1
+  //totalMoney = totalMoney - 1
   roundMoney = 0
   updateMoneyText()
 
@@ -283,12 +287,14 @@ function flipCards() {
 
   updateDeckCount()
 
+  // This IF statement is a problem. It advances roundNumber to 3 before the user has opted for double or nothing.
   if (roundNumber != 0) {
     roundNumber++
   }
   //roundNumber++
 
-  if (dealerDeck.numberOfCards < 5) {
+//  if (dealerDeck.numberOfCards < 5) {
+  if (totalMoney < 1) {
     stop = true
     text.innerText = "Game over!"
   }
@@ -319,6 +325,7 @@ function isWinningHand(card1, card2, card3, card4, card5) {
   }
 
   let thePair
+  let numberOfPairs = 0
 
   // Check for 1 pair. If found, record the pair value.
   for (let firstIndex=0; firstIndex < currentHand.length; firstIndex++)
@@ -330,6 +337,7 @@ function isWinningHand(card1, card2, card3, card4, card5) {
           text.innerText = "You have a pair! Double or nothing?"
           winningHandBoolean = true
           roundMoney = roundMoney + pairValue
+          numberOfPairs++
         //}
         // Check for 3 of a kind
         for (let thirdIndex=secondIndex+1; thirdIndex <= currentHand.length; thirdIndex++) {
@@ -352,9 +360,24 @@ function isWinningHand(card1, card2, card3, card4, card5) {
             }
           }
         }
+
+        // Check for 2 pair
+        if (numberOfPairs == 2) {
+          text.innerText = "You have TWO PAIR! Double or nothing?"
+        }
+
       }
     }
   }
+
+  // Check for a full house
+  if ( ((currentHand[0] == currentHand[1]) && (currentHand[0] == currentHand[2]) && (currentHand[3] == currentHand[4]))
+    || ((currentHand[0] == currentHand[1]) && (currentHand[2] == currentHand[3]) && (currentHand[2] == currentHand[4])) ) {
+    text.innerText = "You have a FULL HOUSE! Double or nothing?"
+    winningHandBoolean = true
+    roundMoney = roundMoney + fullHouseValue
+  }
+
 
   // Check for a flush (matching suits)
   if (card1.suit == card2.suit && card1.suit == card3.suit && card1.suit == card3.suit && card1.suit == card4.suit && card1.suit == card5.suit) {
@@ -428,14 +451,17 @@ function isDoubleOrNothingWinner() {
 
     // Double the winnings for this round, then add this round's winnings to the total money.
     roundMoney = roundMoney * 2
-    totalMoney = totalMoney + roundMoney
+    //totalMoney = totalMoney + roundMoney
     updateMoneyText()
+
+    promptForDoubleOrNothing()
 
   } else {
     text.innerText = "YOU LOST DOUBLE OR NOTHING!"
     updateMoneyText()
+    roundNumber = 0
   }
-  roundNumber = 0
+
 }
 
 function revealAllCards() {
