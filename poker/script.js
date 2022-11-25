@@ -424,17 +424,15 @@ function doDoubleOrNothing() {
 
 function isDoubleOrNothingWinner() {
   if (doubleOrNothingSelection > CARD_VALUE_MAP[card1.value]) {
-    text.innerText = "YOU WON DOUBLE OR NOTHING! Double or Nothing again?"
+    text.innerText = "YOU WON DOUBLE OR NOTHING!"
 
     // Double the winnings for this round, then add this round's winnings to the total money.
     roundMoney = roundMoney * 2
     totalMoney = totalMoney + roundMoney
     updateMoneyText()
-    
-    promptForDoubleOrNothing()
 
   } else {
-    text.innerText = "YOU LOST DOUBLE OR NOTHING! Click deck to start new round."
+    text.innerText = "YOU LOST DOUBLE OR NOTHING!"
     updateMoneyText()
   }
   roundNumber = 0
