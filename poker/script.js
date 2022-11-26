@@ -41,12 +41,12 @@ let roundMoney = 0
 let pairValue = 1
 let twoPairWinValue = 2
 let threeOfAKindValue = 3
-let fourOfAKindValue = 15
-let flushValue = 7
-let fullHouseValue = 10
-let straightValue = 5
-let straightFlushValue = 25
-let straightRoyalFlushValue = 50
+let fourOfAKindValue = 25
+let flushValue = 6
+let fullHouseValue = 9
+let straightValue = 4
+let straightFlushValue = 50
+let straightRoyalFlushValue = 250
 
 
 //let playerDeck, computerDeck, inRound, stop
