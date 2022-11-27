@@ -340,6 +340,7 @@ function isWinningHand(card1, card2, card3, card4, card5) {
     text.innerText = "You have a FULL HOUSE! Double or nothing?"
     winningHandBoolean = true
     roundMoney = roundMoney + fullHouseValue
+    return
   }
 
   let thePair
