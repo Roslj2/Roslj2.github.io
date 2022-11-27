@@ -53,11 +53,10 @@ let straightRoyalFlushValue = 250
 let dealerDeck, inRound, stop, winningHandBoolean, doubleOrNothingSelection
 let roundNumber = 0 // 0 = new game; 1 = first hand; 2 = final hand; 3 = double or nothing
 
-//document.addEventListener("click", () => {
 dealerCardSlot.addEventListener("click", () => {
 
-  if (roundNumber != 3) {
-    //  if (stop) {
+  /*if (roundNumber != 3) {
+      if (stop) {
     if (roundNumber == 0) {
       startGame()
       return
@@ -68,8 +67,29 @@ dealerCardSlot.addEventListener("click", () => {
     }
 
     flipCards()
-  }
 
+    if (roundNumber == 0) {
+      roundNumber = 1
+    } else if (roundNumber == 1) {
+      roundNumber = 2
+    }
+  }*/
+
+  if (roundNumber == 0) {
+    text.innerText = "round number 0"
+    startGame()
+    return
+  } else if (roundNumber == 1) {
+    text.innerText = "round number 1"
+    totalMoney = totalMoney - 1
+    updateMoneyText()
+    flipCards()
+    roundNumber = 2
+  } else if (roundNumber == 2) {
+    text.innerText = "round number 2"
+    flipCards()
+    return
+  } 
 })
 
 // Set event listener for card 1
@@ -166,22 +186,23 @@ cardSlot5.addEventListener("click", () => {
 // Set event listener for DONButtonYes
 DONButtonYes.addEventListener("click", () => {
     // If it's round 3, clicking DONButton should start the double or nothing flow
-    if (roundNumber == 3){
-      doDoubleOrNothing()
-    }
+    roundNumber = 3
+    
+    doDoubleOrNothing()
+    //}
 })
 
 // Set event listener for DONButtonNo
 DONButtonNo.addEventListener("click", () => {
     // If it's round 3 and this is clicked, the user does not want to double or nothing. Update score, hide DON buttons, and reset deck.
-    if (roundNumber == 3){
+    //if (roundNumber == 3){
       stop = true
       DONButtonYes.style.visibility = 'hidden'
       DONButtonNo.style.visibility = 'hidden'
       totalMoney = totalMoney + roundMoney
       updateMoneyText()
       startGame()
-    }
+    //}
 })
 
 
@@ -288,9 +309,9 @@ function flipCards() {
   updateDeckCount()
 
   // This IF statement is a problem. It advances roundNumber to 3 before the user has opted for double or nothing.
-  if (roundNumber != 0) {
-    roundNumber++
-  }
+  //if (roundNumber != 0) {
+    //roundNumber++
+  //}
   //roundNumber++
 
 //  if (dealerDeck.numberOfCards < 5) {
@@ -471,12 +492,12 @@ function revealAllCards() {
   cardSlot5.appendChild(card5.getHTML())
 }
 
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+if(/Android|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
   // true for mobile device
-
+  text.innerText = "mobile device"
 }else{
   // false for not mobile device
-  document.write("not mobile device");
+  text.innerText = "not a mobile device"
 }
 
 function updateMoneyText() {
