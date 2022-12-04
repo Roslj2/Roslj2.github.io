@@ -73,6 +73,9 @@ dealerCardSlot.addEventListener("click", () => {
   }
 */
 
+if (DONButtonYes.style.visibility == 'hidden')
+{
+  //if (Number(totalMoney) > 0) {
   if (roundNumber == 0) {
       startGame()
       return
@@ -84,8 +87,13 @@ dealerCardSlot.addEventListener("click", () => {
   } else if (roundNumber == 2) {
     flipCards()
     //roundNumber = 3
-
   }
+
+}
+
+
+//  text.innerText = "GAME OVER. You're out of money."
+//}
 
 })
 
