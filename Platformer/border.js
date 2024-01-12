@@ -9,7 +9,7 @@ function Border (x, y, width, height, type) {
 
 	this.draw = function() {
 		if (this.type === 1) {
-			ctx.fillStyle = "blue";
+			ctx.fillStyle = "black";
 		} else if (this.type === 2) {
 			ctx.fillStyle = "red"
 		}
