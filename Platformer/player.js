@@ -1,4 +1,4 @@
-import { ctx, rightKey, upKey, downKey, leftKey, borders } from './index.js'
+import { ctx, rightKey, upKey, downKey, leftKey, bordersArray } from './index.js'
 import checkIntersection from "./index.js"
 
 function Player(x, y, width, height) {
@@ -79,14 +79,28 @@ function Player(x, y, width, height) {
 			}
 
 			//Check for intersections
-			for (let i = 0; i < borders.length; i++) {
+			for (let i = 0; i < bordersArray.length; i++) {
 				borderRect = {
-					x: borders[i].x,
-					y: borders[i].y,
-					width: borders[i].width,
-					height: borders[i].height
+					x: bordersArray[i].x,
+					y: bordersArray[i].y,
+					width: bordersArray[i].width,
+					height: bordersArray[i].height
 				}
-			}
+
+				if (checkIntersection(this, borderRect)) {
+				
+
+					/*	while (checkIntersection(this, borderRect)) {
+							borderRect.x -= Math.sign(this.xspeed);
+						} // end while loop
+					*/
+
+					this.xspeed = 0;
+					
+				} // end if statement
+
+
+			} // end of for loop
 
 			this.x += this.xspeed;
 			this.y += this.yspeed;
@@ -112,28 +126,21 @@ function Player(x, y, width, height) {
 */
 		// The issue is that borderRect is undefined. But, this (player) is defined!
 
-		if (checkIntersection(this, borderRect)) {
+/*		if (checkIntersection(this, borderRect)) {
 			while (checkIntersection(this, borderRect)) {
 				horizontalRect.x -= Math.sign(this.xspeed);
-		}
+			} // end while loop
 
-		this.xspeed = 0;
-		}
+			this.xspeed = 0;
+
+		} // end if statement
+*/
 	}
 
 	this.draw = function() {
 		ctx.fillStyle = "green";
 		ctx.fillRect(this.x, this.y, this.width, this.height);
 	}
-
-	/*if (checkIntersection(horizontalRect, borderRect)) {
-		//while (checkIntersection(horizontalRect, borderRect)) {
-			//horizontalRect.x -= Math.sign(this.xspeed);
-		//}
-		//this.xspeed = 0;
-		conosle.log("hello");
-	} */
-
 
 	
 }
