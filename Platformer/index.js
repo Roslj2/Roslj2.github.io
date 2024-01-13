@@ -14,7 +14,7 @@ var leftKey;
 // Create game variables
 var gameLoop;
 var player;
-var borders = [];
+var bordersArray = [];
 var obsticle
 var tempBorder;
 
@@ -33,12 +33,12 @@ window.onload = function() {
 
 	//Create Borders
 	for (let i = 0; i <= 6; i++) {
-		borders.push(new Border(0 + 100 * i, 550, 600, 50, 1));
+		bordersArray.push(new Border(0 + 100 * i, 550, 600, 50, 1));
 	}
-	for (let i = 0; i < 3; i++) {
+	for (let i = 0; i < 1; i++) {
 		//borders.push(new Border(300, 400 + 100 * i, 5, 200, 1));
 		tempBorder = new Border(300, 500 + 100 * i, 5, 300, 1);
-		borders.push(tempBorder);
+		bordersArray.push(tempBorder);
 	}
 
 	//Start game loop
@@ -69,8 +69,8 @@ function draw() {
 	player.draw();
 
 	//Draw the borders
-	for (let i = 0; i < borders.length; i++) {
-		borders[i].draw();
+	for (let i = 0; i < bordersArray.length; i++) {
+		bordersArray[i].draw();
 	}
 
 }
@@ -134,6 +134,15 @@ function checkIntersection(r1, r2) {
 //alert("In checkIntersection");
 //alert("r1.x = " + r1.x);
 
+	console.log("r1.x is: " + r1.x);
+	console.log("r1.width is: " + r1.width);
+	console.log("r1.y is: " + r1.y);
+	console.log("r1.height is: " + r1.height);
+
+	console.log("r2.x is: " + r2.x);
+	console.log("r2.width is: " + r2.width);
+	console.log("r2.y is: " + r2.y);
+	console.log("r2.height is: " + r2.height);
 
 
 	/*if (r1.x + r1.width >= r2.x && r1.x <= r2.x + r2.width) {
@@ -143,12 +152,24 @@ function checkIntersection(r1, r2) {
 		return true;
 	} */
 
+	if (r1.x >= r2.x + r2.width) {
+		return false;
+	} else if (r1.x + r1.width <= r2.x) {
+		return false;
+	} else if (r1.y >= r2.y + r2.width) {
+		return false;
+	} else if (r1.y + r1.width <= r2.y) {
+		return false;
+	} else {
+		return true;
+	}
+
 }
 
 
 
 export default checkIntersection
 
-export { ctx, rightKey, upKey, downKey, leftKey, borders };
+export { ctx, rightKey, upKey, downKey, leftKey, bordersArray };
 
 
