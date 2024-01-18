@@ -1,5 +1,7 @@
-import { ctx, rightKey, upKey, downKey, leftKey, bordersArray } from './index.js'
+import { ctx, rightKey, upKey, downKey, leftKey, bordersArray, tempBorder, verticleBorder, intersectionType } from './index.js'
 import checkIntersection from "./index.js"
+import checkWhichIntersection from "./index.js"
+
 
 function Player(x, y, width, height) {
 	//Player variable
@@ -87,18 +89,19 @@ function Player(x, y, width, height) {
 					height: bordersArray[i].height
 				}
 
-				if (checkIntersection(this, borderRect)) {
+/*				if (checkIntersection(this, verticleBorder)) {
 				
-
-					/*	while (checkIntersection(this, borderRect)) {
-							borderRect.x -= Math.sign(this.xspeed);
-						} // end while loop
-					*/
-
-					this.xspeed = 0;
-					
+					if (rightKey) {
+						this.xspeed = 0;
+					} 
+					if (upKey == false) {
+						this.yspeed = 0;
+					}
 				} // end if statement
-
+*/
+				if (checkWhichIntersection(this, verticleBorder)) {
+					alert("Inside player.js, intersectionType = " + intersectionType);
+				}
 
 			} // end of for loop
 
@@ -123,10 +126,10 @@ function Player(x, y, width, height) {
 			while (checkIntersection(horizontalRect, borderRect)) {
 				horizontalRect.x -= Math.sign(this.xspeed);
 		} 
-*/
+
 		// The issue is that borderRect is undefined. But, this (player) is defined!
 
-/*		if (checkIntersection(this, borderRect)) {
+		if (checkIntersection(this, borderRect)) {
 			while (checkIntersection(this, borderRect)) {
 				horizontalRect.x -= Math.sign(this.xspeed);
 			} // end while loop
