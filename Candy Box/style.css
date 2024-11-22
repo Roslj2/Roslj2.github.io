@@ -1,0 +1,19 @@
+#div {
+    width: 200px;
+    height: 25px;
+}
+
+p {
+    padding: 10px;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+button {
+    margin-left: 10px;
+    border-radius: 5px;
+}

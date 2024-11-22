@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel = "stylesheet" href = "style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <!-- Page Content -->
+    <div id="div"></div>
+    <div>
+        <button onclick="clear_candies()">RESTART</button>
+        <p>Welcome to the Candy Box page!</p>
+        <p id='candies'></p>
+        <p id='ate'></p>
+        <p id='multiplier'></p>
+        <button id='more_candies' onclick="faster_candies()">FASTER CANDIES</button>
+        <button onclick="eat_candies()">Eat Candies</button>
+        <p id = 'sword'></p>
+        <p id = 'explain_sword'></p>
+        <p id = 'sword_level'></p>
+    </div>
+    <script src="script.js"></script>
+    <img id="fallingImage" src="other_candy.png" style="position: absolute; top: 0; width: 5%; height: 5%;">
+  </body>
+</html>
