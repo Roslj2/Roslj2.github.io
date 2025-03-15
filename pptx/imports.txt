@@ -1,0 +1,8 @@
+flask
+os
+re
+pytesseract
+pdf2image
+pptx
+openai
+PIL
