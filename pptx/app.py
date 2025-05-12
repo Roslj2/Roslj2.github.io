@@ -29,7 +29,7 @@ def extract_text_from_images(images):
         extracted_text.append(text.strip())
 
     raw_text = "\n".join(extracted_text)
-    
+
     return raw_text
 
 # Use OpenAI API to clean and structure the script
@@ -45,6 +45,9 @@ def clean_and_structure_script(text, api_key):
     Identify and retain song lyrics when a character is singing (denoted by ALL CAPS).
     Identify new scenes (denoted by a black line with the scene number and name) and include them in the structured output.
     Ignore stage directions and non-dialogue content.
+    If any inappropriate or offensive language is present, replace those words with '****'.
+    Do not omit or skip any part of the text — just sanitize it appropriately:
+    
     Here is the raw text:
     {text}
     """
